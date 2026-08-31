@@ -13219,10 +13219,10 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-   ФИКС ВЫВОДА КАРТЫ ПОВЕРХ ОШИБКИ API
+   ПРИНУДИТЕЛЬНЫЙ ВЫВОД КАРТЫ НА ЭКРАН
    ========================================== */
 
-/* Гарантируем, что контейнер будет виден всегда */
+/* Полностью ломаем любые системные попытки скрыть блок */
 .map-container, 
 #map-container {
     display: block !important;
@@ -13232,10 +13232,9 @@ screen and (min-width:40em) {
     min-height: 360px !important;
 }
 
-/* Принудительно выводим наш рабочий iframe на передний план */
-#map iframe {
+#map {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    z-index: 999999 !important;
+    height: 320px !important;
 }
