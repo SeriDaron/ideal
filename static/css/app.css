@@ -13170,42 +13170,51 @@ screen and (min-width:40em) {
     pointer-events: auto
 }
 /* ==========================================
-   КРАСИВАЯ АНИМАЦИЯ МЕНЮ (ЛИНИЯ СНИЗУ)
+   ФИКС ДЛЯ ВСПЛЫВАЮЩЕГО МЕНЮ (ЛИНИЯ СНИЗУ)
    ========================================== */
 
-/* 1. Блокируем старые прыгающие анимации текста */
-.dropdown.menu li a, 
-.dropdown.menu li a span {
+/* 1. Полностью сбрасываем старую прыгающую анимацию текста и тегов span внутри всплывающего окна */
+#main-menu.open-menu li a,
+#main-menu.open-menu li a span {
     transform: none !important;
     display: inline-block !important;
     transition: none !important;
 }
 
-/* 2. Настраиваем ссылки меню как стабильную основу */
-.dropdown.menu li a {
+/* 2. Делаем пункты меню адаптивными и блочными */
+#main-menu.open-menu li {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important; /* Текст будет по центру, как обычно во всплывающих окнах */
+}
+
+/* 3. Готовим основу ссылки под появление линии */
+#main-menu.open-menu li a {
+    display: inline-block !important; /* Ссылка сжимается под размер букв */
     position: relative !important;
-    padding: 6px 10px !important;
+    padding: 10px 15px !important;
     text-decoration: none !important;
-    color: #f4c09d !important; /* Розовато-бежевый цвет вашего сайта */
+    color: #f4c09d !important; /* Цвет букв вашего сайта */
+    font-size: 24px !important; /* Увеличиваем размер для удобства нажатия */
     transition: color 0.3s ease-in-out !important;
 }
 
-/* 3. Создаем красивую скрытую линию под текстом */
-.dropdown.menu li a::after {
+/* 4. Создаем скрытую подложку-линию строго под ширину букв */
+#main-menu.open-menu li a::after {
     content: '' !important;
     position: absolute !important;
-    bottom: -4px !important; /* Расстояние от текста до линии */
+    bottom: 2px !important; /* Расстояние от букв до полосы */
     left: 0 !important;
     width: 100% !important;
-    height: 2px !important; /* Толщина линии */
-    background-color: #f4c09d !important; /* Линия в цвет вашего текста */
+    height: 2px !important; /* Толщина подчеркивания */
+    background-color: #f4c09d !important; /* Цвет линии */
     transform: scaleX(0) !important;
     transform-origin: bottom right !important;
     transition: transform 0.3s ease-out !important;
 }
 
-/* 4. Разворачиваем линию на всю ширину при наведении мыши */
-.dropdown.menu li a:hover::after {
+/* 5. Эффект разворачивания линии при наведении мышки */
+#main-menu.open-menu li a:hover::after {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
 }
