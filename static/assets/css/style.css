@@ -13219,25 +13219,35 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-   ПРИНУДИТЕЛЬНОЕ ОТОБРАЖЕНИЕ КОНТЕЙНЕРА КАРТЫ
+   ФОНОВАЯ АВТОНОМНАЯ ЯНДЕКС КАРТА
    ========================================== */
 
-/* Снимаем любые блокировки скрытия с контейнера карты */
-.map-container, 
-#map-container {
+/* ==========================================
+   КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВНОЙ КАРТЫ
+   ========================================== */
+
+.custom-secure-box {
     display: block !important;
+    width: 100% !important;
+    min-height: 320px !important;
+    height: 320px !important;
+    position: relative !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: 360px !important;
-    min-height: 360px !important;
-    transform: none !important;
 }
 
-/* Снимаем блокировки с самого блока карты */
-#map {
+.custom-map-link {
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    width: 100% !important;
     height: 320px !important;
-    min-height: 320px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(244, 192, 157, 0.2) !important;
+    cursor: pointer !important;
+    transition: border-color 0.3s ease !important;
+    overflow: hidden !important;
+}
+
+/* Ваша красивая круговая подсветка при наведении */
+.custom-map-link:hover {
+    border-color: #f4c09d !important;
 }
