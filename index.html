@@ -160,27 +160,9 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Контейнер интерактивной карты (Оригинальная структура) -->
-                <div class="map-container visible" id="map-container" style="display: block !important; visibility: visible !important; opacity: 1 !important; height: 360px !important;">
-                    
-                    <!-- Блок для карты с оригинальным ID. Наш новый iframe полностью перекроет ошибку -->
-                    <div id="map" style="height:320px; width:100%; position: relative; display: block !important;">
-                        
-                        <!-- Ссылка в src обновлена на актуальный рабочий ID Конструктора Яндекс Карт -->
-                        <iframe 
-                            src="https://yandex.ru" 
-                            width="100%" 
-                            height="320" 
-                            frameborder="0"
-                            style="border:0; display:block; position: absolute; top:0; left:0; width:100%; height:320px; z-index: 999999 !important;"
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-
-                    </div>
-                    
-                    <!-- Исправленная ссылка маршрута на точный адрес -->
+                <!-- Абсолютно оригинальный контейнер, который требуют скрипты сайта -->
+                <div class="map-container" id="map-container" data-toggler=".visible">
+                    <div id="map" style="height:320px;"></div>
                     <a class='directions' href="https://yandex.ru" target="_blank">
                         Проложить маршрут <i class="fal fa-angle-right"></i>
                     </a>
@@ -192,19 +174,20 @@
 
 </body>
 
-<!-- Оригинальный скрипт инициализации для обхода провевок main.js -->
+<!-- Оригинальный скрипт инициализации -->
 <script>
     function initMap() {
-        try {
-            var uluru = { lat: 60.009759, lng: 30.240935 };
-            var map = new google.maps.Map(document.getElementById('map'), { zoom: 14, center: uluru, disableDefaultUI: true });
-        } catch(e) {
-            console.log("Карта успешно развернута");
-        }
+        var uluru = { lat: 60.009759, lng: 30.240935 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: uluru,
+                disableDefaultUI: true,
+                zoomControl: true
+            });
     }
 </script>
 
-<!-- API Google с демонстрационным ключом, чтобы разблокировать видимость map-container -->
+<!-- API Карт с вашим исходным ключом -->
 <script async="" defer="" src="https://googleapis.com"></script>
 
 <!-- Основной JS файл проекта -->

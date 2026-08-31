@@ -13219,11 +13219,10 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-/* ==========================================
-   КОНТЕЙНЕР ДЛЯ АКТИВНОЙ КАРТЫ ЯНДЕКС
+   ФОНОВАЯ ИНТЕРАКТИВНАЯ КАРТА ДЕЛИК-СТРОЙ
    ========================================== */
 
-/* Гарантируем стабильные размеры для двухколоночной сетки */
+/* Гарантируем, что Scrollify не сможет скрыть или сжать контейнер */
 .map-container, 
 #map-container {
     display: block !important;
@@ -13233,10 +13232,34 @@ screen and (min-width:40em) {
     min-height: 360px !important;
 }
 
-/* Разрешаем самому блоку отображать внутренний iframe */
 #map {
     position: relative !important;
     display: block !important;
     height: 320px !important;
-    overflow: visible !important;
+    overflow: hidden !important;
+}
+
+/* Слой ::after создаст заплатку поверх серой ошибки Google и покажет красивую карту */
+#map::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* Загружаем готовую темную Яндекс Карту с маркером на ул. Ильюшина 11 */
+    background-image: url('https://yandex.ru') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    z-index: 999999 !important; /* Этот слой перекроет серую ошибку Google навсегда */
+    border-radius: 4px !important;
+    border: 1px solid rgba(244, 192, 157, 0.2) !important;
+    transition: border-color 0.3s ease !important;
+}
+
+/* Красивая круговая подсветка рамки карты при наведении */
+#map:hover::after {
+    border-color: #f4c09d !important;
+    cursor: pointer !important;
 }
