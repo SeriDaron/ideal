@@ -152,7 +152,6 @@
                     Ильюшина 11
                 </p>
                 <br>
-                <!-- Обновленная ссылка на Яндекс Карты для иконки -->
                 <a href="https://yandex.ru" target="_blank" class="map"> <i class="fal fa-map"></i> <i class="fal fa-angle-right"></i></a>
 
                 <p class="social">
@@ -162,9 +161,9 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Контейнер интерактивной карты Яндекс -->
-                <div class="map-container" id="map-container" data-toggler=".visible">
-                    <div id="map" style="height:320px; width:100%;"></div>
+                <!-- Контейнер интерактивной карты Яндекс (Добавлен принудительный display:block) -->
+                <div class="map-container" id="map-container" data-toggler=".visible" style="display: block !important;">
+                    <div id="map" style="height:320px; width:100%; display: block !important; background-color: #121e30;"></div>
                     <a class='directions' href="https://yandex.ru" target="_blank">
                         Проложить маршрут <i class="fal fa-angle-right"></i>
                     </a>
@@ -176,31 +175,28 @@
 
 </body>
 
-<!-- Подключение API Яндекс Карт (Бесплатная базовая версия без ключей) -->
+<!-- Подключение API Яндекс Карт -->
 <script src="https://yandex.ru" type="text/javascript"></script>
 
 <script type="text/javascript">
-    // Ожидаем загрузки API и инициализируем карту
     ymaps.ready(init);
     function init(){ 
         var myMap = new ymaps.Map("map", {
-            // Точные координаты улицы Ильюшина 11
             center: [60.009759, 30.240935], 
             zoom: 15,
-            // Оставляем только кнопку зума (+/-), чтобы интерфейс не был перегружен
             controls: ['zoomControl'] 
+        }, {
+            // Заставляем карту принудительно пересчитать размеры контейнера при загрузке
+            autoFitToViewport: 'always'
         });
 
-        // Создаем маркер нашей компании
         var myPlacemark = new ymaps.Placemark([60.009759, 30.240935], {
             hintContent: 'Делик-Строй',
             balloonContent: 'Санкт-Петербург, ул. Ильюшина, д. 11 (м. Комендантский проспект)'
         }, {
-            // Стильная точка фирменного оранжевого цвета под гамму вашего сайта
             preset: 'islands#orangeDotIcon' 
         });
 
-        // Добавляем маркер на карту
         myMap.geoObjects.add(myPlacemark);
     }
 </script>
