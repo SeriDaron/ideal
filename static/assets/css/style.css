@@ -13218,20 +13218,3 @@ screen and (min-width:40em) {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
 }
-/* ==========================================
-   СТИЛИ ДЛЯ КАРТЫ ПО ПРИМЕРУ С САЙТА IDCY
-   ========================================== */
-
-.map-responsive-box {
-    border: 1px solid rgba(244, 192, 157, 0.2) !important;
-    transition: border-color 0.3s ease !important;
-}
-
-/* Красивая подсветка рамки при наведении курсора */
-.map-responsive-box:hover {
-    border-color: #f4c09d !important;
-}
-
-.directions-site:hover {
-    opacity: 0.8 !important;
-}
