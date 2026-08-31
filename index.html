@@ -161,9 +161,17 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Контейнер интерактивной карты Яндекс (Добавлен принудительный display:block) -->
-                <div class="map-container" id="map-container" data-toggler=".visible" style="display: block !important;">
-                    <div id="map" style="height:320px; width:100%; display: block !important; background-color: #121e30;"></div>
+                <!-- Контейнер интерактивной карты Яндекс (Защищен от конфликтов скриптов) -->
+                <div class="map-container" id="map-container" style="display: block !important; position: relative;">
+                    
+                    <iframe 
+                        src="https://yandex.ru" 
+                        width="100%" 
+                        height="320" 
+                        frameborder="0"
+                        style="border:0; display:block; background-color: #121e30; border-radius: 4px;">
+                    </iframe>
+
                     <a class='directions' href="https://yandex.ru" target="_blank">
                         Проложить маршрут <i class="fal fa-angle-right"></i>
                     </a>
@@ -175,31 +183,7 @@
 
 </body>
 
-<!-- Подключение API Яндекс Карт -->
-<script src="https://yandex.ru" type="text/javascript"></script>
-
-<script type="text/javascript">
-    ymaps.ready(init);
-    function init(){ 
-        var myMap = new ymaps.Map("map", {
-            center: [60.009759, 30.240935], 
-            zoom: 15,
-            controls: ['zoomControl'] 
-        }, {
-            // Заставляем карту принудительно пересчитать размеры контейнера при загрузке
-            autoFitToViewport: 'always'
-        });
-
-        var myPlacemark = new ymaps.Placemark([60.009759, 30.240935], {
-            hintContent: 'Делик-Строй',
-            balloonContent: 'Санкт-Петербург, ул. Ильюшина, д. 11 (м. Комендантский проспект)'
-        }, {
-            preset: 'islands#orangeDotIcon' 
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-    }
-</script>
+<!-- Все старые тяжелые JS-скрипты Яндекс/Google карт полностью удалены, так как фрейму они не требуются -->
 
 <!-- Основной JS файл проекта -->
 <script type="text/javascript" src="./static/assets/js/main.js"></script>
