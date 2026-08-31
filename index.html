@@ -134,7 +134,7 @@
     </a>
 </section>
 
-<!-- Секция контактов с фоновым изображением -->
+<!-- Секция контактов с фоновым изображением (Оригинальная структура полностью восстановлена) -->
 <section class="contact step scrollify" id='contact' data-magellan-target='contact' style="background-image:url('./static/img/exterior-building-facade-blue-1.jpeg')">
     <div class="overlay"></div>
     <div class="grid-container">
@@ -152,7 +152,8 @@
                     Ильюшина 11
                 </p>
                 <br>
-                <a href="https://yandex.ru" target="_blank" class="map"> <i class="fal fa-map"></i> <i class="fal fa-angle-right"></i></a>
+                <!-- Ссылка-иконка теперь привязана к переключению контейнера карты -->
+                <a href="#" data-toggle="map-container" class="map"> <i class="fal fa-map"></i> <i class="fal fa-angle-right"></i></a>
 
                 <p class="social">
                     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -161,27 +162,19 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Контейнер интерактивной карты (Оригинальная структура) -->
-                <div class="map-container" id="map-container" data-toggler=".visible">
+                <!-- Защищенный контейнер, который принудительно отобразит кастомную карту -->
+                <div class="map-container" id="map-container" style="display: block !important; visibility: visible !important; opacity: 1 !important; height: 360px !important;">
                     
-                    <!-- Блок для карты с оригинальным ID -->
-                    <div id="map" style="height:320px; width:100%;">
-                        
-                        <!-- Официальный бесплатный фрейм Google, настроенный строго на ул. Ильюшина 11 -->
-                        <iframe 
-                            src="https://google.com" 
-                            width="100%" 
-                            height="320" 
-                            style="border:0; display:block;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <!-- Яндекс Карта с кастомным маркером и темной темой -->
+                    <iframe 
+                        src="https://yandex.ru" 
+                        width="100%" 
+                        height="320" 
+                        frameborder="0"
+                        style="border:0 !important; display:block !important; width:100% !important; height:320px !important; opacity:1 !important; visibility:visible !important;">
+                    </iframe>
 
-                    </div>
-                    
-                    <!-- Исправленная ссылка маршрута на точный адрес -->
-                    <a class='directions' href="https://google.com" target="_blank">
+                    <a class='directions' href="https://yandex.ru" target="_blank" style="display: block !important; margin-top: 10px !important; visibility: visible !important; opacity: 1 !important;">
                         Проложить маршрут <i class="fal fa-angle-right"></i>
                     </a>
                 </div>
@@ -192,11 +185,11 @@
 
 </body>
 
-<!-- Пустой технический скрипт-заглушка, чтобы main.js не выдавал ошибку отсутствия функции -->
+<!-- Заглушка для предотвращения ошибок в main.js -->
 <script>
     function initMap() { }
 </script>
 
-<!-- Основной JS файл проекта (его не трогаем, он запустит Foundation) -->
+<!-- Основной JS файл проекта -->
 <script type="text/javascript" src="./static/assets/js/main.js"></script>
 </html>

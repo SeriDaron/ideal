@@ -13218,3 +13218,26 @@ screen and (min-width:40em) {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
 }
+/* ==========================================
+   ПРИНУДИТЕЛЬНОЕ ОТОБРАЖЕНИЕ КОНТЕЙНЕРА КАРТЫ
+   ========================================== */
+
+/* Снимаем любые блокировки скрытия с контейнера карты */
+.map-container, 
+#map-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 360px !important;
+    min-height: 360px !important;
+    transform: none !important;
+}
+
+/* Снимаем блокировки с самого блока карты */
+#map {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 320px !important;
+    min-height: 320px !important;
+}
