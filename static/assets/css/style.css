@@ -13218,3 +13218,24 @@ screen and (min-width:40em) {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
 }
+/* ==========================================
+   ФИКС ВЫВОДА КАРТЫ ПОВЕРХ ОШИБКИ API
+   ========================================== */
+
+/* Гарантируем, что контейнер будет виден всегда */
+.map-container, 
+#map-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 360px !important;
+    min-height: 360px !important;
+}
+
+/* Принудительно выводим наш рабочий iframe на передний план */
+#map iframe {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+}
