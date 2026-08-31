@@ -13219,10 +13219,6 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-   ФОНОВАЯ АВТОНОМНАЯ ЯНДЕКС КАРТА
-   ========================================== */
-
-/* ==========================================
    КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВНОЙ КАРТЫ
    ========================================== */
 
@@ -13245,9 +13241,12 @@ screen and (min-width:40em) {
     cursor: pointer !important;
     transition: border-color 0.3s ease !important;
     overflow: hidden !important;
+    /* Аппаратное ускорение для Safari на Mac, чтобы фрейм внутри анимации не пропадал */
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
 }
 
-/* Ваша красивая круговая подсветка при наведении */
+/* Красивая круговая подсветка при наведении */
 .custom-map-link:hover {
     border-color: #f4c09d !important;
 }
