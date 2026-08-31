@@ -13219,7 +13219,7 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-   КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВНОЙ КАРТЫ ЯНДЕКС
+   КОНТЕЙНЕР ДЛЯ АВТОНОМНОЙ КАРТЫ ДЕЛИК-СТРОЙ
    ========================================== */
 
 .custom-secure-box {
@@ -13232,13 +13232,13 @@ screen and (min-width:40em) {
     opacity: 1 !important;
 }
 
-/* Настройка самого блока карты с вашей подсветкой */
+/* Настройка рамки картинки */
 #map-canvas {
     transition: border-color 0.3s ease !important;
     border: 1px solid rgba(244, 192, 157, 0.2) !important;
 }
 
-/* Круговая аккуратная подсветка при наведении */
+/* Красивая подсветка рамки по кругу при наведении мыши */
 .custom-secure-box:hover #map-canvas {
     border-color: #f4c09d !important;
 }

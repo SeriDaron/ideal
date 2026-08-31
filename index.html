@@ -162,13 +162,14 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Оригинальный контейнер, который скрипты скроллинга видят как пустой и безопасный -->
+                <!-- Стабильный контейнер с вашей круговой подсветкой -->
                 <div class="custom-secure-box">
                     
-                    <div id="map-canvas" style="width: 100%; height: 320px; border-radius: 4px; overflow: hidden; background-color: #121e30;">
-                        <!-- Виджет Яндекс Карты со встроенным скриптом (темная тема и кастомный красивый маркер на ул. Ильюшина 11) -->
-                        <script type="text/javascript" charset="utf-8" async src="https://yandex.ru"></script>
-                    </div>
+                    <!-- Ссылка-обертка: клик по карте сразу открывает маршрут в Яндексе -->
+                    <a href="https://yandex.ru" target="_blank" style="display: block !important; border: 0 !important; outline: none !important;">
+                        <!-- Автономная карта-картинка в Base64. Она загрузится мгновенно без внешних запросов -->
+                        <img id="map-canvas" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='800' height='320' viewBox='0 0 800 320'><rect width='100%' height='100%' fill='%23121e30'/><circle cx='400' cy='160' r='100' fill='none' stroke='%23242f3e' stroke-width='4'/><path d='M400,130 C385,130 375,142 375,155 C375,172 400,195 400,195 C400,195 425,172 425,155 C425,142 415,130 400,130 Z' fill='%23f4c09d'/><circle cx='400' cy='152' r='5' fill='%23121e30'/><text x='400' y='225' fill='%23f4c09d' font-family='sans-serif' font-size='15' font-weight='bold' text-anchor='middle'>ул. Ильюшина, 11 (Открыть Яндекс.Карты)</text></svg>" alt="Карта Делик-Строй" style="width: 100% !important; height: 320px !important; object-fit: cover !important; display: block !important; border-radius: 4px;">
+                    </a>
 
                     <a class='directions-btn' href="https://yandex.ru" target="_blank">
                         Проложить маршрут <i class="fal fa-angle-right"></i>
@@ -181,11 +182,11 @@
 
 </body>
 
-<!-- Заглушка, чтобы main.js не выдавал критическую ошибку в консоли браузера -->
+<!-- Системная заглушка для main.js -->
 <script>
     function initMap() { }
 </script>
 
-<!-- Основной JS файл проекта (Foundation + Scrollify) -->
+<!-- Основной JS файл проекта -->
 <script type="text/javascript" src="./static/assets/js/main.js"></script>
 </html>
