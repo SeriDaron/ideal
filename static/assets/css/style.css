@@ -13219,34 +13219,40 @@ screen and (min-width:40em) {
     transform-origin: bottom left !important;
 }
 /* ==========================================
-   КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВНОЙ КАРТЫ
+   КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВНОЙ КАРТЫ ЯНДЕКС
    ========================================== */
 
 .custom-secure-box {
     display: block !important;
     width: 100% !important;
-    min-height: 320px !important;
-    height: 320px !important;
+    min-height: 360px !important;
+    height: 360px !important;
     position: relative !important;
     visibility: visible !important;
     opacity: 1 !important;
 }
 
-.custom-map-link {
-    display: block !important;
-    width: 100% !important;
-    height: 320px !important;
-    border-radius: 4px !important;
-    border: 1px solid rgba(244, 192, 157, 0.2) !important;
-    cursor: pointer !important;
+/* Настройка самого блока карты с вашей подсветкой */
+#map-canvas {
     transition: border-color 0.3s ease !important;
-    overflow: hidden !important;
-    /* Аппаратное ускорение для Safari на Mac, чтобы фрейм внутри анимации не пропадал */
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
+    border: 1px solid rgba(244, 192, 157, 0.2) !important;
 }
 
-/* Красивая круговая подсветка при наведении */
-.custom-map-link:hover {
+/* Круговая аккуратная подсветка при наведении */
+.custom-secure-box:hover #map-canvas {
     border-color: #f4c09d !important;
+}
+
+/* Ссылка под картой */
+.directions-btn {
+    display: block !important; 
+    margin-top: 15px !important; 
+    color: #f4c09d !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.directions-btn:hover {
+    opacity: 0.8 !important;
 }
