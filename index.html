@@ -147,11 +147,12 @@
                 </p>
                 <p class="address">
                     г. Магнитогорск, <br>
-                    ул. Ворошилова <br>
+                    пр. Карла Маркса, 153 <br>
                     Гостиный двор
                 </p>
                 <br>
-                <a href="https://google.com" target="_blank" class="map"> <i class="fal fa-map"></i> <i class="fal fa-angle-right"></i></a>
+                <!-- Иконка-карта: ведет на маршрут в Яндекс Картах до Гостиного Двора -->
+                <a href="https://yandex.ru/maps/-/CTT0fEyH" target="_blank" class="map"> <i class="fal fa-map"></i> <i class="fal fa-angle-right"></i></a>
 
                 <p class="social">
                     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -161,15 +162,20 @@
             </div>
             <div class="column medium-8 large-9 small-12">
                 <!-- Наш рабочий и красиво подсвечивающийся контейнер -->
-                <div class="idcy-map-responsive">
-                    
-                    <!-- Сюда JavaScript принудительно встроит интерактивную карту -->
-                    <div id="yandex-local-map" style="width: 100%; height: 320px; background-color: #121e30;"></div>
+                <div class="ds-map-box">
+
+                    <!-- Виджет Яндекс.Карт через iframe — без API-ключа, без JS -->
+                    <iframe
+                        id="yandex-local-map"
+                        src="https://yandex.ru/map-widget/v1/?ll=58.981549%2C53.378671&z=16&pt=58.981549,53.378671,pm2rdm"
+                        width="100%" height="320" frameborder="0" style="border:0;"
+                        allowfullscreen loading="lazy">
+                    </iframe>
 
                 </div>
                 
-                <!-- Рабочая ссылка маршрута под картой -->
-                <a class='idcy-directions-btn' href="https://yandex.ru" target="_blank">
+                <!-- Текстовая ссылка под картой: класс изменен на ds-directions-btn, маршрут ведет в Яндекс Карты -->
+                <a class='ds-directions-btn' href="https://yandex.ru/maps/-/CTT0fEyH" target="_blank">
                     Проложить маршрут <i class="fal fa-angle-right"></i>
                 </a>
             </div>
@@ -179,56 +185,10 @@
 
 </body>
 
-<!-- Подключаем официальное открытое API Яндекс Карт (версия 2.1) -->
-<script src="https://yandex.ru" type="text/javascript"></script>
-
-<script type="text/javascript">
-    // Заглушка для main.js, чтобы сайт не выдавал ошибок
-    function initMap() { }
-
-    // Функция инициализации карты
-    function startYandexMap() {
-        var mapContainer = document.getElementById('yandex-local-map');
-        if (!mapContainer || mapContainer.innerHTML !== "") return; // Защита от дублирования
-
-        // Точные координаты ТРК Гостиный Двор в Магнитогорске
-        var centerCoordinates = [53.398288, 58.989255];
-
-        var myMap = new ymaps.Map('yandex-local-map', {
-            center: centerCoordinates,
-            zoom: 16,
-            controls: ['zoomControl'] // Оставляем кнопки масштаба
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
-
-        // Создаем красивую оранжевую метку на здании
-        var myPlacemark = new ymaps.Placemark(centerCoordinates, {
-            hintContent: 'Делик-Строй',
-            balloonContent: 'ТРК Гостиный Двор'
-        }, {
-            preset: 'islands#orangeDotIcon' // Фирменный оранжевый маркер
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-
-        // Принудительно обновляем размеры карты, чтобы вылечить баг скроллеров
-        setTimeout(function() {
-            myMap.container.fitToViewport();
-        }, 500);
-    }
-
-    // Запускаем карту после загрузки API и проверяем видимость
-    ymaps.ready(startYandexMap);
-
-    // Дополнительный триггер: если Scrollify активирует секцию, карта обновит размеры
-    window.addEventListener('scroll', function() {
-        if (typeof ymaps !== 'undefined') {
-            ymaps.ready(startYandexMap);
-        }
-    });
-</script>
+<!-- Карта подключена как iframe-виджет выше — отдельный JS для неё не нужен -->
 
 <!-- Основной JS файл проекта -->
 <script type="text/javascript" src="./static/assets/js/main.js"></script>
 </html>
+
+53.378671, 58.981549

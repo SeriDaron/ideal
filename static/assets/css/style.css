@@ -11460,8 +11460,8 @@ screen and (min-width:64em) {
 }
 
 .contact .contact-info .map:after {
-    content: 'Directions';
-    font-size: 17px;
+    content: 'Маршрут';
+    font-size: 18px;
     position: absolute;
     white-space: nowrap;
     left: 50px;
@@ -13219,7 +13219,7 @@ screen and (min-width:40em) {
    НЕЗАВИСИМАЯ ИНТЕРАКТИВНАЯ КАРТА
    =============================== */
 
-.idcy-map-responsive {
+.ds-map-responsive {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -13232,9 +13232,6 @@ screen and (min-width:40em) {
     transition: border-color 0.3s ease !important;
 }
 
-.idcy-map-responsive:hover {
-    border-color: #f4c09d !important;
-}
 
 #yandex-local-map {
     display: block !important;
@@ -13244,15 +13241,21 @@ screen and (min-width:40em) {
     height: 320px !important;
 }
 
-.idcy-directions-btn {
+.ds-directions-btn {
     display: block !important;
     margin-top: 15px !important;
-    color: #f4c09d !important;
-    font-weight: bold !important;
+    color: #f4c09d !important; /* Базовый розовато-бежевый цвет */
+    text-align: center !important;
+    font-weight: normal !important;
     text-decoration: none !important;
-    transition: opacity 0.2s ease !important;
+    /* Добавляем плавный переход для изменения цвета */
+    transition: color 0.3s ease !important; 
+        /* НАСТРОЙКА РАЗМЕРА ШРИФТА (измените число под себя) */
+    font-size: 18px !important; 
 }
 
-.idcy-directions-btn:hover {
-    opacity: 0.8 !important;
+/* Эффект подсветки при наведении */
+.ds-directions-btn:hover {
+    color: #fefefe !important; /* Вместо затухания текст плавно загорается белым цветом */
+    opacity: 1 !important;     /* Гарантируем 100% яркость без прозрачности */
 }
