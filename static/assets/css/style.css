@@ -176,11 +176,9 @@ select {
     text-transform: none
 }
 
-[type=reset],
-[type=submit],
-button,
-html [type=button] {
-    -webkit-appearance: button
+[type=reset],[type=submit],button,html [type=button]{
+    -webkit-appearance: button;
+    appearance: button;
 }
 
 [type=button]::-moz-focus-inner,
@@ -214,8 +212,9 @@ input {
 }
 
 [type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
+-webkit-appearance: textfield;
+    appearance: textfield;
+    outline-offset: -2px;
 }
 
 [type=search]::-webkit-search-cancel-button,
@@ -4543,8 +4542,9 @@ screen and (min-width:64em) {
     vertical-align: middle;
     margin: 0 0 1rem 0;
     font-family: inherit;
-    padding: .85em 1em;
+padding: .85em 1em;
     -webkit-appearance: none;
+    appearance: none;
     border: 1px solid transparent;
     border-radius: 0;
     transition: background-color .25s ease-out, color .25s ease-out;
@@ -5067,7 +5067,6 @@ screen and (min-width:64em) {
 }
 
 .button.dropdown::after {
-    display: block;
     width: 0;
     height: 0;
     border: inset .4em;
@@ -5077,9 +5076,8 @@ screen and (min-width:64em) {
     border-color: #fefefe transparent transparent;
     position: relative;
     top: .4em;
-    display: inline-block;
     float: right;
-    margin-left: 1em
+    margin-left: 1em;
 }
 
 .button.dropdown.hollow::after {
@@ -6538,7 +6536,6 @@ screen and (min-width:64em) {
 }
 
 .drilldown .js-drilldown-back>a::before {
-    display: block;
     width: 0;
     height: 0;
     border: inset 6px;
@@ -6546,11 +6543,9 @@ screen and (min-width:64em) {
     border-left-width: 0;
     border-right-style: solid;
     border-color: transparent #1779ba transparent transparent;
-    border-left-width: 0;
     display: inline-block;
     vertical-align: middle;
     margin-right: .75rem;
-    border-left-width: 0
 }
 
 .dropdown-pane {
@@ -10695,7 +10690,8 @@ a {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
-    -o-transition: all .3s
+    -o-transition: all .3s;
+    transition: all .3s;
 }
 
 a:hover {
@@ -11152,9 +11148,11 @@ screen and (min-width:64em) {
 
 .effect-shine {
     -webkit-mask-image: linear-gradient(75deg, rgba(0, 0, 0, .5) 20%, #000 60%, rgba(0, 0, 0, .5) 70%);
+    mask-image: linear-gradient(75deg, rgba(0, 0, 0, .5) 20%, #000 60%, rgba(0, 0, 0, .5) 70%);
     -webkit-mask-size: 200%;
+    mask-size: 200%;
     -webkit-animation: shine 3s infinite ease-in-out;
-    animation: shine 3s infinite ease-in-out
+    animation: shine 3s infinite ease-in-out;
 }
 
 .home-header {
@@ -11767,8 +11765,7 @@ screen and (min-width:64em) {
 @media print,
 screen and (min-width:40em) {
     .project-info .social {
-        display: inline-block;
-        float: right
+        float: right;
     }
 
     .project-info .social svg {
@@ -11777,7 +11774,7 @@ screen and (min-width:40em) {
         transform: scale(.75);
         opacity: .8;
         -webkit-filter: drop-shadow(1px 1px 2px #151822);
-        filter: drop-shadow(1px 1px 2px #151822)
+        filter: drop-shadow(1px 1px 2px #151822);
     }
 }
 
