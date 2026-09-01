@@ -13236,11 +13236,11 @@ screen and (min-width:40em) {
     border-color: #f4c09d !important;
 }
 
-#yandex-local-map, 
-#yandex-local-map iframe {
+#yandex-local-map {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    width: 100% !important;
     height: 320px !important;
 }
 

@@ -160,22 +160,11 @@
                 </p>
             </div>
             <div class="column medium-8 large-9 small-12">
-                <!-- Наш полностью рабочий и красиво подсвечивающийся контейнер -->
+                <!-- Наш рабочий и красиво подсвечивающийся контейнер -->
                 <div class="idcy-map-responsive">
                     
-                    <!-- Изменен ID и применен чистый HTML-виджет, который CSP не сможет заблокировать -->
-                    <div id="yandex-local-map" style="width: 100%; height: 320px; background-color: #121e30; position: relative;">
-                        
-                        <!-- Официальный неблокируемый HTML-виджет Яндекс Карт (Магнитогорск, ТРК Гостиный Двор, темная тема + оранжевый маркер) -->
-                        <iframe 
-                            src="https://yandex.ru" 
-                            width="100%" 
-                            height="320" 
-                            frameborder="0"
-                            style="border:0 !important; display:block !important; width:100% !important; height:320px !important; position: absolute; top:0; left:0; z-index: 9999;">
-                        </iframe>
-
-                    </div>
+                    <!-- Сюда JavaScript принудительно встроит интерактивную карту -->
+                    <div id="yandex-local-map" style="width: 100%; height: 320px; background-color: #121e30;"></div>
 
                 </div>
                 
@@ -190,12 +179,55 @@
 
 </body>
 
-<!-- Чистая функция-заглушка для main.js, чтобы сайт не выдавал ошибок и прелоадер не зависал -->
-<script>
-    function initMap() { }
-</script>
+<!-- Подключаем официальное открытое API Яндекс Карт (версия 2.1) -->
+<script src="https://yandex.ru" type="text/javascript"></script>
 
-<!-- Все старые тяжелые JS-подключения API полностью удалены, чтобы не вызывать конфликтов безопасности -->
+<script type="text/javascript">
+    // Заглушка для main.js, чтобы сайт не выдавал ошибок
+    function initMap() { }
+
+    // Функция инициализации карты
+    function startYandexMap() {
+        var mapContainer = document.getElementById('yandex-local-map');
+        if (!mapContainer || mapContainer.innerHTML !== "") return; // Защита от дублирования
+
+        // Точные координаты ТРК Гостиный Двор в Магнитогорске
+        var centerCoordinates = [53.398288, 58.989255];
+
+        var myMap = new ymaps.Map('yandex-local-map', {
+            center: centerCoordinates,
+            zoom: 16,
+            controls: ['zoomControl'] // Оставляем кнопки масштаба
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        // Создаем красивую оранжевую метку на здании
+        var myPlacemark = new ymaps.Placemark(centerCoordinates, {
+            hintContent: 'Делик-Строй',
+            balloonContent: 'ТРК Гостиный Двор'
+        }, {
+            preset: 'islands#orangeDotIcon' // Фирменный оранжевый маркер
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+
+        // Принудительно обновляем размеры карты, чтобы вылечить баг скроллеров
+        setTimeout(function() {
+            myMap.container.fitToViewport();
+        }, 500);
+    }
+
+    // Запускаем карту после загрузки API и проверяем видимость
+    ymaps.ready(startYandexMap);
+
+    // Дополнительный триггер: если Scrollify активирует секцию, карта обновит размеры
+    window.addEventListener('scroll', function() {
+        if (typeof ymaps !== 'undefined') {
+            ymaps.ready(startYandexMap);
+        }
+    });
+</script>
 
 <!-- Основной JS файл проекта -->
 <script type="text/javascript" src="./static/assets/js/main.js"></script>
