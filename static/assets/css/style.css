@@ -13215,3 +13215,44 @@ screen and (min-width:40em) {
     transform: scaleX(1) !important;
     transform-origin: bottom left !important;
 }
+/* ===============================
+   НЕЗАВИСИМАЯ ИНТЕРАКТИВНАЯ КАРТА
+   =============================== */
+
+.idcy-map-responsive {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 320px !important;
+    min-height: 320px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(244, 192, 157, 0.2) !important;
+    transition: border-color 0.3s ease !important;
+}
+
+.idcy-map-responsive:hover {
+    border-color: #f4c09d !important;
+}
+
+#yandex-local-map, 
+#yandex-local-map iframe {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 320px !important;
+}
+
+.idcy-directions-btn {
+    display: block !important;
+    margin-top: 15px !important;
+    color: #f4c09d !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.idcy-directions-btn:hover {
+    opacity: 0.8 !important;
+}
