@@ -11010,7 +11010,7 @@ a:hover {
     font-weight: 200
 }
 
-#main-menu ul li a.delik,
+#main-menu ul li a.finishing,
 #main-menu ul li a.services {
     font-weight: 400
 }
@@ -11045,7 +11045,7 @@ screen and (min-width:40em) {
         font-size: 360%
     }
 
-    #main-menu ul li a.delik {
+    #main-menu ul li a.finishing {
         font-size: 539%
     }
 }
@@ -11074,7 +11074,7 @@ screen and (min-width:64em) {
         font-size: 360%
     }
 
-    #main-menu ul li a.delik {
+    #main-menu ul li a.finishing {
         font-size: 539%
     }
 }
