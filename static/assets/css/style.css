@@ -13346,3 +13346,43 @@ screen and (min-width:40em) {
         transform: translateY(10px);
     }
 }
+
+/* ==========================================================================
+   АДАПТИВНАЯ ШАПКА ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ (IDEAL BRAND)
+   Слоган, название IDEAL и логотип раньше были в ряд фиксированного
+   размера (px) и на узких экранах (iPhone) уезжали за границу экрана.
+   Теперь размеры плавно уменьшаются пропорционально ширине экрана
+   (clamp), не вылезая за пределы видимой области.
+   ========================================================================== */
+.menu-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.menu-bar > div[style*="gap: 20px"] {
+    gap: clamp(6px, 2vw, 20px) !important;
+    min-width: 0;
+}
+.brand-slogan {
+    font-size: clamp(6px, 2vw, 11px) !important;
+    letter-spacing: clamp(0.3px, 0.3vw, 1.5px) !important;
+    white-space: nowrap !important;
+}
+.brand-name {
+    font-size: clamp(12px, 4.5vw, 20px) !important;
+    letter-spacing: clamp(1px, 1.2vw, 5px) !important;
+    flex-shrink: 0;
+}
+.logo-wrapper {
+    width: clamp(22px, 6vw, 34px) !important;
+    height: clamp(22px, 6vw, 34px) !important;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 500px) {
+    /* На совсем узких экранах слоган прячем полностью, оставляем только
+       название бренда и логотип — их видимость приоритетнее. */
+    .brand-slogan,
+    .menu-bar > div[style*="gap: 20px"] > div[style*="width: 1px"] {
+        display: none !important;
+    }
+}

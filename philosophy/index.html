@@ -110,7 +110,7 @@
     <!-- background-attachment:fixed уже есть в .team-intro), текст и видео  -->
     <!-- скроллятся поверх неё, и картинка перекрывается только следующим    -->
     <!-- разделом «Услуги» — как на референсном сайте Delik.                 -->
-    <section class="home-header team-intro" style="background-image:url('../static/img/bg-philosophy.jpg'); min-height: 100vh; position: relative;" data-magellan="" data-offset="-25">
+    <section class="home-header team-intro" style="background-image:url('../static/img/bg-philosophy.jpg'); min-height: 100vh; position: relative; display: block;" data-magellan="" data-offset="-25">
         <div class="overlay"></div>
         <div style="position: relative; z-index: 2; width: 100%; max-width: 900px; box-sizing: border-box; margin: 0 auto; padding: 130px 20px 70px; text-align: center;">
             <img src="../static/img/logo-icon.svg" alt="IDEAL" style="position: relative; max-width: 100px; margin-bottom: 30px;">
@@ -131,20 +131,19 @@
             <span style="font-size: 125%;">"IDEAL — искусство совершенства в пространстве и деталях"</span>
             </p>
         </div>
-        <a href="#philosophy-2" class="scroll-icon scroll-pages" style="display: block; text-decoration: none; text-align: center; position: relative; bottom: auto; z-index: 4; margin-bottom: 60px;">
-            <img class="arrow-down luxury-float" style="max-width: 60px; width: 60px; height: auto;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
-        </a>
+        <div style="width: 100%; max-width: 900px; margin: 0 auto 60px; padding: 0 20px; box-sizing: border-box; text-align: center;">
+            <a href="#philosophy-2" style="text-decoration: none; z-index: 4; display: inline-block;">
+                <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
+            </a>
+        </div>
 
         <!-- «Второй этаж» — видео и текст о цели услуг, поверх той же      -->
         <!-- закреплённой фоновой картинки, без отдельного тёмного фона.    -->
-        <div id="philosophy-2" data-magellan-target="philosophy-2" style="position: relative; z-index: 2; width: 100%; max-width: 1140px; box-sizing: border-box; margin: 0 auto; padding: 10px 20px 60px; text-align: center;">
-            <!-- Видео-заглушка — по ширине как одна карточка услуг -->
-            <div class="grid-x" style="justify-content: center; margin-bottom: 40px;">
-                <div class="cell medium-6 large-5">
-                    <video controls playsinline preload="none" poster="../static/img/bg-services.jpg" style="width: 100%; height: auto; display: block;">
-                        <source src="../static/video/services-tour.mp4" type="video/mp4">
-                    </video>
-                </div>
+        <div id="philosophy-2" data-magellan-target="philosophy-2" style="position: relative; z-index: 2; padding: 10px 20px 60px; text-align: center;">
+            <div style="width: 100%; max-width: 560px; margin: 0 auto 40px; box-sizing: border-box;">
+                <video controls playsinline preload="none" poster="../static/img/bg-services.jpg" width="560" height="315" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; background-color: #000;">
+                    <source src="../static/video/services-tour.mp4" type="video/mp4">
+                </video>
             </div>
 
             <h4 style="color: #E5BAA2; font-weight: 400;">Главная цель наших услуг Design &amp; Build</h4>
@@ -154,9 +153,11 @@
             </p>
         </div>
 
-        <a href="#services" class="scroll-icon scroll-pages" style="display: block; text-decoration: none; text-align: center; position: relative; z-index: 2; margin-bottom: 50px;">
-            <img class="arrow-down luxury-float" style="max-width: 60px; width: 60px; height: auto;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
-        </a>
+        <div style="width: 100%; max-width: 1140px; margin: 0 auto 50px; padding: 0 20px; box-sizing: border-box; text-align: center;">
+            <a href="#services" style="text-decoration: none; z-index: 2; display: inline-block;">
+                <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
+            </a>
+        </div>
     </section>
 
     <!-- ============================================================ -->
@@ -291,6 +292,7 @@
                             </ul>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <a href="../static/docs/smeta-sample.pdf" target="_blank" class="print-doc-btn" style="display: inline-block; margin-top: 15px; margin-left: 10px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer; text-decoration: none;">🖶 Печать примера сметы</a>
                     </div>
                     </div>
 
@@ -312,6 +314,7 @@
                             <p style="color:#8a8e98; font-size: 90%;">Срок: обычно 2 недели</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <a href="../static/docs/contract-sample.pdf" target="_blank" class="print-doc-btn" style="display: inline-block; margin-top: 15px; margin-left: 10px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer; text-decoration: none;">🖶 Печать договора</a>
                     </div>
                     </div>
 
