@@ -5615,8 +5615,17 @@
             }), (0, a["default"])(window).on("resize", function() {
                 window.innerWidth >= 640 && !(0, a["default"])(".project-slider").hasClass("slick-initialized") && o()
             }), document.addEventListener("wheel", function(e) {
-                (0, a["default"])(".project-slider") && (e.deltaY < 0 ? (0, a["default"])(".project-slider").slick("slickPrev") : (0, a["default"])(".project-slider").slick("slickNext"))
-            }), (0, a["default"])("#close-button").click(function() {
+                var pSlider = document.querySelector(".project-slider");
+                if (!pSlider || !pSlider.classList.contains("slick-initialized")) { return; }
+                var r = pSlider.getBoundingClientRect();
+                var overSlider = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+                if (!overSlider) { return; }
+                e.preventDefault();
+                if (window.__pSliderWheelLock) { return; }
+                window.__pSliderWheelLock = true;
+                if (e.deltaY < 0) { (0, a["default"])(".project-slider").slick("slickPrev"); } else { (0, a["default"])(".project-slider").slick("slickNext"); }
+                setTimeout(function () { window.__pSliderWheelLock = false; }, 500);
+            }, { passive: false }), (0, a["default"])("#close-button").click(function() {
                 (0, a["default"])(".first-time-showing").removeClass("first-time-showing")
             }), (0, a["default"])("#main-menu li:not(.social) a").click(function() {
                 (0, a["default"])(".open-menu").removeClass("open-menu")
@@ -12408,4 +12417,94 @@ document.addEventListener('DOMContentLoaded', function () {
             if (closeBtn) { closeBtn.classList.remove('close'); }
         });
     });
+});
+
+/* ==========================================================================
+   ПОЛНОЭКРАННЫЙ ПРОСМОТР ФОТО ГАЛЕРЕИ ПОРТФОЛИО (лайтбокс)
+   Работает независимо от слайдера project-slider (в т.ч. на мобильных,
+   где сам слайдер отключается через "unslick"). Клик/тап по фото открывает
+   его на весь экран с перелистыванием свайпом (влево/вправо), стрелками
+   и клавиатурой; закрытие — по кресту, Esc или тапу вне фото.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+    var slider = document.querySelector('.project-slider');
+    if (!slider) { return; }
+
+    var photos = Array.prototype.slice.call(
+        slider.querySelectorAll('.slide-content:not(.video-slide) img')
+    );
+    if (!photos.length) { return; }
+
+    var urls = photos.map(function (img) {
+        return img.getAttribute('data-lazy') || img.getAttribute('src');
+    });
+
+    // Разметка лайтбокса добавляется один раз в конец body
+    var overlay = document.createElement('div');
+    overlay.className = 'pg-lightbox';
+    overlay.innerHTML =
+        '<button type="button" class="pg-lightbox-close" aria-label="Закрыть">&times;</button>' +
+        '<button type="button" class="pg-lightbox-prev" aria-label="Предыдущее фото">&#8249;</button>' +
+        '<img class="pg-lightbox-img" src="" alt="">' +
+        '<button type="button" class="pg-lightbox-next" aria-label="Следующее фото">&#8250;</button>' +
+        '<div class="pg-lightbox-counter"></div>';
+    document.body.appendChild(overlay);
+
+    var imgEl = overlay.querySelector('.pg-lightbox-img');
+    var counterEl = overlay.querySelector('.pg-lightbox-counter');
+    var currentIndex = 0;
+
+    function show(index) {
+        currentIndex = (index + urls.length) % urls.length;
+        imgEl.src = urls[currentIndex];
+        counterEl.textContent = (currentIndex + 1) + ' / ' + urls.length;
+    }
+
+    function open(index) {
+        show(index);
+        overlay.classList.add('pg-lightbox-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+        overlay.classList.remove('pg-lightbox-open');
+        document.body.style.overflow = '';
+    }
+
+    photos.forEach(function (img, i) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function () { open(i); });
+    });
+
+    overlay.querySelector('.pg-lightbox-close').addEventListener('click', close);
+    overlay.querySelector('.pg-lightbox-prev').addEventListener('click', function () { show(currentIndex - 1); });
+    overlay.querySelector('.pg-lightbox-next').addEventListener('click', function () { show(currentIndex + 1); });
+
+    // Клик по тёмному фону (не по самому фото) тоже закрывает
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) { close(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('pg-lightbox-open')) { return; }
+        if (e.key === 'Escape') { close(); }
+        if (e.key === 'ArrowLeft') { show(currentIndex - 1); }
+        if (e.key === 'ArrowRight') { show(currentIndex + 1); }
+    });
+
+    // Перелистывание свайпом (тач-устройства)
+    var touchStartX = 0, touchStartY = 0;
+    overlay.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        // Игнорируем в основном вертикальные свайпы, чтобы не путать с обычным скроллом
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx > 0) { show(currentIndex - 1); } else { show(currentIndex + 1); }
+        }
+    }, { passive: true });
 });
