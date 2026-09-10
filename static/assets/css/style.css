@@ -11296,19 +11296,19 @@ screen and (min-width:64em) {
 }
 
 .home-header .animation-container div:nth-of-type(3) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 8s;
-    animation: tracking-in-out-contract 4.5s ease 8s
+    -webkit-animation: tracking-in-out-contract 4.5s ease 9s;
+    animation: tracking-in-out-contract 4.5s ease 9s
 }
 
 .home-header .animation-container div:nth-of-type(4) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 11.5s;
-    animation: tracking-in-out-contract 4.5s ease 11.5s
+    -webkit-animation: tracking-in-out-contract 4.5s ease 13.5s;
+    animation: tracking-in-out-contract 4.5s ease 13.5s
 }
 
 .home-header .animation-container div:last-of-type {
     top: calc(50% - 100px);
-    -webkit-animation: fade-in 3.375s ease-in-out 15.7s forwards;
-    animation: fade-in 3.375s ease-in-out 15.7s forwards
+    -webkit-animation: fade-in 3.375s ease-in-out 18s forwards;
+    animation: fade-in 3.375s ease-in-out 18s forwards
 }
 
 .home-header .animation-container div:first-of-type {
