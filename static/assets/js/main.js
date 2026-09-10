@@ -12392,3 +12392,20 @@
 }, function(e, t, n) {
     e.exports = n(20)
 }]);
+/* ==========================================================================
+   ИСПРАВЛЕНИЕ: при клике на пункт меню снимался класс .open-menu (панель
+   закрывалась), но класс .close оставался на body и на кнопке-гамбургере —
+   из-за этого иконка оставалась крестиком, а прокрутка страницы блокировалась
+   (застревало через раз). Снимаем .close с обоих элементов при клике на
+   любую ссылку меню.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+    var menuLinks = document.querySelectorAll('#main-menu li:not(.social) a');
+    var closeBtn = document.getElementById('close-button');
+    menuLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.body.classList.remove('close');
+            if (closeBtn) { closeBtn.classList.remove('close'); }
+        });
+    });
+});
