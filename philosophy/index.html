@@ -110,19 +110,19 @@
     <!-- background-attachment:fixed уже есть в .team-intro), текст и видео  -->
     <!-- скроллятся поверх неё, и картинка перекрывается только следующим    -->
     <!-- разделом «Услуги» — как на референсном сайте Delik.                 -->
-    <section class="home-header team-intro" style="background-image:url('../static/img/bg-philosophy.jpg'); min-height: 100vh; position: relative; display: block;" data-magellan="" data-offset="-25">
+    <section class="home-header team-intro" style="background-image:url('../static/img/bg-philosophy.jpg'); min-height: 100vh; position: relative; display: block;">
         <div class="overlay"></div>
-        <div style="position: relative; z-index: 2; width: 100%; max-width: 900px; box-sizing: border-box; margin: 0 auto; padding: 70px 20px 30px; text-align: center;">
-            <img src="../static/img/logo-icon.svg" alt="IDEAL" style="position: relative; max-width: 80px; margin-bottom: 15px;">
-            <h2 style="text-transform: uppercase; margin-bottom: 12px; font-weight: 700; color: #c2957a;">Наша философия</h2>
-            <p style="color: #cacaca; font-weight: 400; font-size: 103%; line-height: 1.3;">
-                Бренд IDEAL — это бескомпромиссное стремление к совершенству в каждой детали. Мы убеждены, что создание премиального интерьера — это не просто строительный процесс, а ювелирная материализация вашего стиля жизни. В сегменте high-end отделки роскошь определяется безупречным качеством интеграции каждого элемента.<br>
+        <div style="position: relative; z-index: 2; width: 100%; max-width: 900px; box-sizing: border-box; margin: 0 auto; padding: 130px 20px 70px; text-align: center;">
+            <img src="../static/img/logo-icon.svg" alt="IDEAL" style="position: relative; max-width: 100px; margin-bottom: 30px;">
+            <h2 style="text-transform: uppercase; margin-bottom: 20px; font-weight: 700; color: #c2957a;">Наша философия</h2>
+            <p style="color: #cacaca; font-weight: 400; font-size: 120%; line-height: 1.4;">
+                Бренд IDEAL — это бескомпромиссное стремление к совершенству в каждой детали. Мы убеждены, что создание премиального интерьера — это не просто строительный процесс, а ювелирная материализация вашего стиля жизни. В сегменте high-end отделки роскошь определяется безупречным качеством интеграции каждого элемента.<br><br>
 
-                Каждый день мы соревнуемся с самими собой, непрерывно повышая стандарты сервиса и инженерной точности. Наша цель — превзойти результаты прошлых объектов и предложить решения, опережающие ожидания самых искушенных клиентов.<br>
+                Каждый день мы соревнуемся с самими собой, непрерывно повышая стандарты сервиса и инженерной точности. Наша цель — превзойти результаты прошлых объектов и предложить решения, опережающие ожидания самых искушенных клиентов.<br><br>
 
-                Мы берем на себя полную ответственность за управление проектом: от сложнейшего технологического планирования и закупки редких материалов до строгого авторского надзора. Мы позаботимся о том, чтобы весь цикл премиальной отделки прошёл безупречно и деликатно, полностью освобождая ваше личное время.<br>
+                Мы берем на себя полную ответственность за управление проектом: от сложнейшего технологического планирования и закупки редких материалов до строгого авторского надзора. Мы позаботимся о том, чтобы весь цикл премиальной отделки прошёл безупречно и деликатно, полностью освобождая ваше личное время.<br><br>
 
-                Фундамент нашего взаимодействия с VIP-заказчиками — это абсолютная прозрачность, фиксация сметы до начала работ и взаимное доверие, которое становится нашей общей главной валютой. Мы создаем пространство, в котором идеально сочетаются эстетика, функциональность и долговечность.<br>
+                Фундамент нашего взаимодействия с VIP-заказчиками — это абсолютная прозрачность, фиксация сметы до начала работ и взаимное доверие, которое становится нашей общей главной валютой. Мы создаем пространство, в котором идеально сочетаются эстетика, функциональность и долговечность.<br><br>
 
                 Для нас нет ничего более вдохновляющего, чем видеть, как смелые архитектурные идеи превращаются в безупречную реальность резиденций и апартаментов. Мы работаем для тех, кто разделяет нашу страсть к абсолютному перфекционизму.
             </p>
@@ -131,15 +131,15 @@
             <span style="font-size: 125%;">"IDEAL — искусство совершенства в пространстве и деталях"</span>
             </p>
         </div>
-        <div style="width: 100%; max-width: 900px; margin: 0 auto 20px; padding: 0 20px; box-sizing: border-box; text-align: center; position: relative; z-index: 4;">
-            <a href="#philosophy-2" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
+        <div style="width: 100%; max-width: 900px; margin: 0 auto 60px; padding: 0 20px; box-sizing: border-box; text-align: center; position: relative; z-index: 4;">
+            <a href="#philosophy-2" onclick="return scrollToWithOffset('philosophy-2', event)" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
                 <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
             </a>
         </div>
 
         <!-- «Второй этаж» — видео и текст о цели услуг, поверх той же      -->
         <!-- закреплённой фоновой картинки, без отдельного тёмного фона.    -->
-        <div id="philosophy-2" data-magellan-target="philosophy-2" style="position: relative; z-index: 2; padding: 10px 20px 60px; text-align: center;">
+        <div id="philosophy-2" style="position: relative; z-index: 2; padding: 10px 20px 60px; text-align: center;">
             <div style="width: 100%; max-width: 560px; margin: 0 auto 40px; box-sizing: border-box;">
                 <video controls playsinline preload="none" poster="../static/img/bg-services.jpg" width="560" height="315" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; background-color: #000;">
                     <source src="../static/video/services-tour.mp4" type="video/mp4">
@@ -154,7 +154,7 @@
         </div>
 
         <div style="width: 100%; max-width: 1140px; margin: 0 auto 50px; padding: 0 20px; box-sizing: border-box; text-align: center; position: relative; z-index: 4;">
-            <a href="#services" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
+            <a href="#services" onclick="return scrollToWithOffset('services', event)" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
                 <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
             </a>
         </div>
@@ -172,11 +172,11 @@
     <section style="background-color: #151822; padding-top: 40px; padding-bottom: 120px; position: relative; z-index: 5;">
         <div class="grid-container">
 
-            <a id="services" data-magellan-target="services" style="display: block; scroll-margin-top: 100px;"></a>
+            <a id="services" style="display: block; scroll-margin-top: 100px;"></a>
 
             <div class="grid-x grid-margin-x" style="justify-content: center;">
                 <div class="cell medium-10 large-8" style="text-align: center; margin-bottom: 50px;">
-                    <h2 style="color: #ffffff; text-transform: uppercase; letter-spacing: 3px; font-weight: 300;">Услуги</h2>
+                    <h2 style="color: #ffffff; text-transform: uppercase; letter-spacing: 4px; font-weight: 300; font-size: 42px;">Услуги</h2>
                     <p style="color: #a0a5b0; font-size: 110%; line-height: 1.7;">
                         Чтобы снять неопределённость вокруг процесса проектирования и строительства вашего дома, мы подготовили это описание, отражающее каждый этап работы. Мы надеемся, что оно даёт ясную картину того, чего ожидать, работая с нами, и поможет увереннее обсуждать ваш проект.
                     </p>
@@ -185,13 +185,13 @@
 
             <!-- 7 карточек услуг в 2 колонки -->
             <div class="grid-x grid-margin-x" style="justify-content: center;">
-                <div class="cell medium-12 large-11">
+                <div class="cell medium-12 large-12">
                     <div class="grid-x grid-margin-x">
 
                     <!-- 1. Архитектура и проектирование (наш текст) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Архитектура и проектирование</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Архитектура и проектирование</h3>
                         <img src="../static/portfolio/photo.jpg" alt="Архитектура и проектирование" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;">Полный цикл архитектурного проектирования: от высокоточного лазерного обмера объекта до готовой рабочей документации и инженерных систем.</p>
                         <div class="service-more" id="svc-more-1" style="display: none; color: #cacaca;">
@@ -213,14 +213,14 @@
                                 <li>Авторский надзор, операционный контроль и координация смежных подрядчиков</li>
                             </ul>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-1', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-1', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
                     <!-- 2. Дизайн интерьера (наш текст) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Дизайн интерьера</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Дизайн интерьера</h3>
                         <img src="../static/portfolio/photo_pr1.jpg" alt="Дизайн интерьера" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;">Художественная концепция, подбор премиальных материалов и полная 3D-визуализация будущего пространства.</p>
                         <div class="service-more" id="svc-more-2" style="display: none; color: #cacaca;">
@@ -240,14 +240,14 @@
                                 <li>Индивидуальное консультирование, комплектация и финишное декорирование объекта</li>
                             </ul>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-2', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-2', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
                     <!-- 3. Проектирование и реализация / Design & Build (наш текст) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Проектирование и реализация</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Проектирование и реализация</h3>
                         <img src="../static/portfolio/photo.jpg" alt="Проектирование и реализация" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;">Единый подрядчик отвечает за весь проект «под ключ» — от концепции и бюджета до сдачи объекта и передачи ключей.</p>
                         <div class="service-more" id="svc-more-3" style="display: none; color: #cacaca;">
@@ -268,14 +268,14 @@
                                 <li>Сервисное гарантийное обслуживание интерьерных и инженерных систем</li>
                             </ul>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-3', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-3', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
                     <!-- 4. Строительство и отделка (наш текст) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Строительство и отделка</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Строительство и отделка</h3>
                         <img src="../static/portfolio/photo.jpg" alt="Строительство и отделка" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;">Фиксированная смета, строгий технический надзор и высококлассное строительно-монтажное исполнение.</p>
                         <div class="service-more" id="svc-more-4" style="display: none; color: #cacaca;">
@@ -291,15 +291,18 @@
                                 <li>Гарантийное техническое обслуживание всех конструкций и систем</li>
                             </ul>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
-                        <a href="../static/docs/smeta-sample.pdf" target="_blank" class="print-doc-btn" style="display: inline-block; margin-top: 15px; margin-left: 10px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer; text-decoration: none;">🖶 Печать примера сметы</a>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <a href="javascript:void(0);" onclick="printDoc('../static/docs/smeta-sample.pdf')" class="print-icon-btn" style="display: inline-block; margin-top: 15px; margin-left: 12px; vertical-align: middle;">
+                            <img src="../static/img/print-icon.png" alt="Печать примера сметы" style="width: 34px; height: 34px; border-radius: 50%; opacity: 0.85;">
+                            <span class="print-tooltip">Печать примера сметы</span>
+                        </a>
                     </div>
                     </div>
 
                     <!-- 5. Предпроектная консультация (переведено с референсного сайта Delik) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Предпроектная консультация</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Предпроектная консультация</h3>
                         <img src="../static/portfolio/photo_pr1.jpg" alt="Предпроектная консультация" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;"><strong style="color:#E5BAA2;">Профиль клиента.</strong> Главная цель этого этапа — узнать всё о личности, образе жизни и пространственных потребностях клиента.</p>
                         <div class="service-more" id="svc-more-5" style="display: none; color: #cacaca;">
@@ -313,15 +316,18 @@
                             </ul>
                             <p style="color:#8a8e98; font-size: 90%;">Срок: обычно 2 недели</p>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
-                        <a href="../static/docs/contract-sample.pdf" target="_blank" class="print-doc-btn" style="display: inline-block; margin-top: 15px; margin-left: 10px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer; text-decoration: none;">🖶 Печать договора</a>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <a href="javascript:void(0);" onclick="printDoc('../static/docs/contract-sample.pdf')" class="print-icon-btn" style="display: inline-block; margin-top: 15px; margin-left: 12px; vertical-align: middle;">
+                            <img src="../static/img/print-icon.png" alt="Печать договора" style="width: 34px; height: 34px; border-radius: 50%; opacity: 0.85;">
+                            <span class="print-tooltip">Печать договора</span>
+                        </a>
                     </div>
                     </div>
 
                     <!-- 6. Концептуальный дизайн (переведено с референсного сайта Delik) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Концептуальный дизайн</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Концептуальный дизайн</h3>
                         <img src="../static/portfolio/photo.jpg" alt="Концептуальный дизайн" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;"><strong style="color:#E5BAA2;">Разработка концепции.</strong> На этом этапе мы начинаем превращать информацию в архитектурное решение — тестируем варианты и формируем общее представление о внешнем виде и ощущении пространства.</p>
                         <div class="service-more" id="svc-more-6" style="display: none; color: #cacaca;">
@@ -333,14 +339,14 @@
                             </ul>
                             <p style="color:#8a8e98; font-size: 90%;">Срок: обычно 2–3 недели</p>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-6', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-6', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
                     <!-- 7. Ведение строительных работ (переведено с референсного сайта Delik) -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 35px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Ведение строительных работ</h3>
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Ведение строительных работ</h3>
                         <img src="../static/portfolio/photo_pr1.jpg" alt="Ведение строительных работ" style="width: 100%; height: auto; display: block; margin: 20px 0;">
                         <p style="color: #a0a5b0; line-height: 1.7;">Хотя основная часть архитектурной работы выполняется до начала строительства, наше постоянное присутствие на этапе стройки не менее важно — это одно из главных преимуществ, когда проектировщик выступает и подрядчиком.</p>
                         <div class="service-more" id="svc-more-7" style="display: none; color: #cacaca;">
@@ -348,7 +354,7 @@
                             <p>Некоторые решения неизбежно приходится принимать или корректировать прямо на месте — наша вовлечённость и возможность напрямую работать с субподрядчиками критически важны для качественного результата и избежания дорогостоящих задержек.</p>
                             <p>Во время визитов на объект мы фотофиксируем прогресс и составляем отчёты, подтверждаем соответствие материалов и качества работ. Мы ведём ежедневный документированный контроль, чтобы все работы были выполнены на нашем уровне.</p>
                         </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-7', this)" style="margin-top: 15px; background: transparent; border: 1px solid rgba(229, 186, 162, 0.4); color: #E5BAA2; padding: 10px 24px; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-7', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
@@ -371,5 +377,76 @@
         el.style.display = isOpen ? 'none' : 'block';
         btn.textContent = isOpen ? 'Читать далее ⌄' : 'Свернуть ⌃';
     }
+
+    // Плавный переход по стрелкам-указателям с ручным отступом от шапки.
+    // Не полагаемся на scroll-margin-top/Magellan — на мобильных при клике
+    // (в отличие от прямого перехода по ссылке) они вели себя непредсказуемо
+    // и прятали заголовок «Услуги» за шапкой.
+    function scrollToWithOffset(id, evt) {
+        if (evt) { evt.preventDefault(); }
+        var target = document.getElementById(id);
+        if (!target) { return false; }
+        var headerOffset = 90;
+        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        return false;
+    }
+
+    // Если на страницу переходят сразу с якорем в адресе (например, по ссылке
+    // «Услуги» из меню на другой странице), делаем тот же корректный отступ
+    // после того, как вёрстка полностью устоится.
+    window.addEventListener('load', function () {
+        if (window.location.hash) {
+            var id = window.location.hash.substring(1);
+            setTimeout(function () { scrollToWithOffset(id, null); }, 350);
+        }
+    });
+    // Печать документов (смета/договор): открывает PDF и сразу вызывает
+    // системный диалог печати браузера — как раньше при Ctrl+P, а не
+    // просто открывает файл отдельной вкладкой.
+    function printDoc(url) {
+        var w = window.open(url, '_blank', 'width=900,height=1024');
+        if (!w) { return; }
+        w.addEventListener('load', function () {
+            w.focus();
+            setTimeout(function () { w.print(); }, 600);
+        });
+    }
 </script>
+<style>
+    /* Иконки печати с подписью-подсказкой при наведении */
+    .print-icon-btn {
+        position: relative;
+    }
+    .print-icon-btn img {
+        transition: opacity .2s, transform .2s;
+    }
+    .print-icon-btn:hover img {
+        opacity: 1 !important;
+        transform: scale(1.08);
+    }
+    .print-tooltip {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151822;
+        color: #E5BAA2;
+        border: 1px solid rgba(229, 186, 162, 0.3);
+        padding: 6px 12px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        border-radius: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s;
+        pointer-events: none;
+        z-index: 10;
+    }
+    .print-icon-btn:hover .print-tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
 </html>
