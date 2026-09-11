@@ -31,7 +31,12 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
+    /* Единая плавная прокрутка при переходе по ссылкам-якорям (стрелочки
+       между разделами) — раньше на одних страницах скролл был мгновенным
+       (обычный переход по ссылке), на других — с разной кастомной
+       анимацией, из-за чего ощущалось непоследовательно. */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13347,7 +13352,7 @@ screen and (min-width:40em) {
 .luxury-float {
     animation: luxuryFloatBounce 2.5s infinite ease-in-out !important;
     /* Мягкое белое свечение по контуру, чтобы стрелочка была сочной и контрастной на темном фоне */
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.65)) brightness(1.2) !important;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.85)) brightness(1.5) !important;
     transition: filter 0.3s ease !important;
 }
 

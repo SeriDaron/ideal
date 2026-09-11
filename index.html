@@ -2,19 +2,20 @@
 <html class="no-js" lang="ru">
 <head>
     <!-- Заголовок вкладки главной страницы сайта -->
-    <title>IDEAL | Премиальная отделка резиденций и апартаментов под ключ</title>
+    <title>IDEAL | Премиальная отделка резиденций и апартаментов под ключ в СПб</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Современные иконки и фавиконки (Очищено от устаревшего кода) -->
-    <link rel="icon" href="./static/img/favicon/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="./static/img/logo.svg">
+    <link rel="icon" href="./static/img/favicon/favicon.ico?v=2" sizes="any">
+    <link rel="apple-touch-icon" href="./static/img/logo.svg?v=2">
     <link rel="manifest" href="./static/img/favicon/site.webmanifest">
     <meta name="theme-color" content="#0b0c0e">
     
     <!-- Основной файл стилей -->
     <link rel="stylesheet" href="./static/assets/css/style.css">
+    <link rel="preload" as="video" href="./static/video/main-bg-vid.mp4" type="video/mp4">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
@@ -117,7 +118,7 @@
 <section id="home" class="home-header step scrollify" data-magellan="" data-offset="-25" style="position: relative; width: 100%; height: 100vh; overflow: hidden; background-color: #0b0c0e;">
     
     <!-- Настоящий, системный видеоплеер -->
-    <video autoplay muted loop playsinline poster="./static/img/main-bg.jpg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0;">
+    <video autoplay muted loop playsinline preload="auto" poster="./static/img/main-bg.jpg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; cursor: pointer;">
         <source src="./static/video/main-bg-vid.mp4" type="video/mp4">
         Ваш браузер не поддерживает видео.
     </video>
@@ -192,15 +193,15 @@
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                 </p>
             </div>
-            <div class="column medium-8 large-9 small-12">
+            <div class="column medium-8 large-9 small-12" style="display: flex; flex-direction: column;">
                 <!-- Наш рабочий и красиво подсвечивающийся контейнер -->
-                <div class="ds-map-box">
+                <div class="ds-map-box" style="flex: 1 1 auto; min-height: 380px;">
 
                     <!-- Виджет Яндекс.Карт через iframe — без API-ключа, без JS -->
                     <iframe
                         id="yandex-local-map"
                         src="https://yandex.ru/map-widget/v1/?ll=58.981549%2C53.378671&z=16&pt=58.981549,53.378671,pm2rdm"
-                        width="100%" height="320" frameborder="0" style="border:0;"
+                        width="100%" height="100%" frameborder="0" style="border:0; display: block; min-height: 380px;"
                         allowfullscreen loading="lazy">
                     </iframe>
 
@@ -232,6 +233,14 @@
             if (v) {
                 v.setAttribute('playsinline', '');
                 v.setAttribute('webkit-playsinline', '');
+                // Некоторые версии iOS всё равно блокируют автозапуск (особенно
+                // в режиме энергосбережения или на мобильной сети) и показывают
+                // неактивную иконку play. Пробуем запустить сразу, а если
+                // браузер отклонил автозапуск — доигрываем по первому тапу.
+                var tryPlay = function () { v.play().catch(function () {}); };
+                tryPlay();
+                v.addEventListener('click', tryPlay);
+                document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
             }
         });
     }

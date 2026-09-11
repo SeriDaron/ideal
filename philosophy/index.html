@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Современные иконки и фавиконки (Очищено от устаревшего кода) -->
-    <link rel="icon" href="../static/img/favicon/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="../static/img/logo.svg">
+    <link rel="icon" href="../static/img/favicon/favicon.ico?v=2" sizes="any">
+    <link rel="apple-touch-icon" href="../static/img/logo.svg?v=2">
     <link rel="manifest" href="../static/img/favicon/site.webmanifest">
     <meta name="theme-color" content="#0b0c0e">
     
@@ -133,7 +133,7 @@
         </div>
         <div style="width: 100%; max-width: 900px; margin: 0 auto 60px; padding: 0 20px; box-sizing: border-box; text-align: center; position: relative; z-index: 4;">
             <a href="#philosophy-2" onclick="return scrollToWithOffset('philosophy-2', event)" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
-                <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
+                <img class="arrow-down luxury-float" style="width: 60px; height: 60px; position: static; max-width: 60px; animation: none;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
             </a>
         </div>
 
@@ -155,7 +155,7 @@
 
         <div style="width: 100%; max-width: 1140px; margin: 0 auto 50px; padding: 0 20px; box-sizing: border-box; text-align: center; position: relative; z-index: 4;">
             <a href="#services" onclick="return scrollToWithOffset('services', event)" style="text-decoration: none; display: inline-block; position: relative; z-index: 4;">
-                <img style="width: 60px; height: 60px;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
+                <img class="arrow-down luxury-float" style="width: 60px; height: 60px; position: static; max-width: 60px; animation: none;" src="../static/img/icons/arrow-down.svg" alt="Дальше">
             </a>
         </div>
     </section>
@@ -188,135 +188,33 @@
                 <div class="cell medium-12 large-12">
                     <div class="grid-x grid-margin-x">
 
-                    <!-- 1. Архитектура и проектирование (наш текст) -->
+                    <!-- 01. Приёмка объекта и аудит -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Архитектура и проектирование</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Архитектура и проектирование" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Полный цикл архитектурного проектирования: от высокоточного лазерного обмера объекта до готовой рабочей документации и инженерных систем.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">01. Приёмка объекта и аудит</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Приёмка объекта и аудит" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Инспектируем пространство на этапе передачи от застройщика, чтобы зафиксировать реальное состояние объекта и защитить ваши интересы.</p>
                         <div class="service-more" id="svc-more-1" style="display: none; color: #cacaca;">
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Высокоточный обмер объекта и лазерное 3D-сканирование пространства</li>
-                                <li>Анализ технологического потенциала и разработка концепции</li>
-                                <li>Эскизное проектирование и планировочные решения</li>
-                                <li>Разработка полного пакета архитектурно-строительных чертежей</li>
-                                <li>Подготовка проектной документации для согласования перепланировок</li>
-                                <li>Разработка инженерно-технической документации по стандартам застройщиков</li>
-                                <li>Архитектурное сохранение, реставрация и модернизация исторических элементов</li>
-                                <li>Экологичное и энергоэффективное проектирование узлов</li>
-                                <li>Независимый архитектурный консалтинг и аудит сторонних проектов</li>
-                                <li>Фотореалистичная 3D-визуализация интерьеров и резиденций</li>
-                                <li>Проектирование премиальных инженерных систем (ОВК, ЭОМ, СС, Умный дом)</li>
-                                <li>Разработка детальной рабочей документации для производства строительных работ</li>
-                                <li>Составление точных ведомостей объёмов работ и материалов (Quantity Survey)</li>
-                                <li>Комплексное управление и администрирование проекта (Project Management)</li>
-                                <li>Авторский надзор, операционный контроль и координация смежных подрядчиков</li>
-                            </ul>
+                            <p>Мы проводим приемку объекта с использованием профессиональных тепловизоров и высокоточных лазерных уровней для составления детальной дефектной ведомости — это фиксирует реальное состояние квартиры и защищает вас при спорах с застройщиком.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-1', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 2. Дизайн интерьера (наш текст) -->
+                    <!-- 02. Проект, смета и договор -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Дизайн интерьера</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Дизайн интерьера" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Художественная концепция, подбор премиальных материалов и полная 3D-визуализация будущего пространства.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">02. Проект, смета и договор</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Проект, смета и договор" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Готовим прозрачную юридическую и финансовую базу, прежде чем приступать к самому ремонту.</p>
                         <div class="service-more" id="svc-more-2" style="display: none; color: #cacaca;">
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Экспертный технический анализ и детальный обмер помещений</li>
-                                <li>Разработка художественной концепции и стилистического решения</li>
-                                <li>Профессиональный подбор премиальных отделочных материалов и текстиля</li>
-                                <li>Создание индивидуального дизайн-предложения и планировочных сценариев</li>
-                                <li>Комплексная разработка детальных архитектурных чертежей интерьера</li>
-                                <li>Фотореалистичная 3D-визуализация будущего пространства</li>
-                                <li>Подготовка полного пакета рабочей технической документации для строителей</li>
-                                <li>Междисциплинарное 3D-моделирование и увязка смежных инженерных узлов</li>
-                                <li>Проектирование мебели и элементов интерьера по индивидуальным авторским эскизам</li>
-                                <li>Комплексное администрирование проекта и координация всех процессов</li>
-                                <li>Организация, технический запуск и ведение процесса реализации проекта</li>
-                                <li>Регулярный авторский надзор и строгий контроль соответствия чертежам</li>
-                                <li>Индивидуальное консультирование, комплектация и финишное декорирование объекта</li>
-                            </ul>
+                            <p>Детально изучаем ваш готовый дизайн-проект или разрабатываем собственный с нуля с полной спецификацией. На основе этого формируется фиксированная смета на работы и материалы, готовится официальный договор со строгими гарантиями и согласовывается перепланировка в контролирующих органах.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-2', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
-                    </div>
-                    </div>
-
-                    <!-- 3. Проектирование и реализация / Design & Build (наш текст) -->
-                    <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Проектирование и реализация</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Проектирование и реализация" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Единый подрядчик отвечает за весь проект «под ключ» — от концепции и бюджета до сдачи объекта и передачи ключей.</p>
-                        <div class="service-more" id="svc-more-3" style="display: none; color: #cacaca;">
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Комплексный технический аудит объекта и лазерное 3D-сканирование</li>
-                                <li>Анализ инженерно-технологической реализуемости проекта</li>
-                                <li>Создание архитектурной концепции, рабочей документации и 3D-визуализации</li>
-                                <li>Предварительное планирование бюджета и оптимизация инвестиций</li>
-                                <li>Разработка детального графика производства работ и поставок материалов</li>
-                                <li>Составление спецификаций, подбор и размещение заказов на фабриках</li>
-                                <li>Организация логистики, закупки и бережной доставки премиальных материалов</li>
-                                <li>Юридическое и административное сопровождение строительного процесса</li>
-                                <li>Комплексное управление проектом единым генеральным подрядчиком</li>
-                                <li>Филигранное исполнение и строительно-монтажная реализация «под ключ»</li>
-                                <li>Постоянный технический контроль и непрерывный авторский надзор</li>
-                                <li>Финальная сдача объекта, клининг, декорирование и передача ключей</li>
-                                <li>Постпроектная поддержка и сопровождение после завершения всех работ</li>
-                                <li>Сервисное гарантийное обслуживание интерьерных и инженерных систем</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-3', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
-                    </div>
-                    </div>
-
-                    <!-- 4. Строительство и отделка (наш текст) -->
-                    <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Строительство и отделка</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Строительство и отделка" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Фиксированная смета, строгий технический надзор и высококлассное строительно-монтажное исполнение.</p>
-                        <div class="service-more" id="svc-more-4" style="display: none; color: #cacaca;">
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Детальный расчет стоимости, составление прозрачной и фиксированной сметы</li>
-                                <li>Формирование строгого календарного графика производства строительных работ</li>
-                                <li>Административно-техническое сопровождение и ведение документации</li>
-                                <li>Профессиональный проектный менеджмент и координация всех процессов на объекте</li>
-                                <li>Высококлассное строительно-монтажное исполнение и финишная отделка</li>
-                                <li>Постоянный технический надзор, контроль качества и геометрии поверхностей</li>
-                                <li>Итоговая инспекция, комплексная сдача готового объекта заказчику</li>
-                                <li>Профессиональная поддержка клиента после успешного завершения проекта</li>
-                                <li>Гарантийное техническое обслуживание всех конструкций и систем</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                         <a href="javascript:void(0);" onclick="printDoc('../static/docs/smeta-sample.pdf')" class="print-icon-btn" style="display: inline-block; margin-top: 15px; margin-left: 12px; vertical-align: middle;">
                             <img src="../static/img/print-icon.png" alt="Печать примера сметы" style="width: 34px; height: 34px; border-radius: 50%; opacity: 0.85;">
                             <span class="print-tooltip">Печать примера сметы</span>
                         </a>
-                    </div>
-                    </div>
-
-                    <!-- 5. Предпроектная консультация (переведено с референсного сайта Delik) -->
-                    <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Предпроектная консультация</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Предпроектная консультация" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;"><strong style="color:#E5BAA2;">Профиль клиента.</strong> Главная цель этого этапа — узнать всё о личности, образе жизни и пространственных потребностях клиента.</p>
-                        <div class="service-more" id="svc-more-5" style="display: none; color: #cacaca;">
-                            <p><strong style="color:#E5BAA2;">Анализ участка.</strong> Изучение и документирование текущих условий на объекте: обмер границ участка, а также исследование прилегающей территории, климата и норм, влияющих на проект.</p>
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Предварительное исследование участка и локации</li>
-                                <li>Обмер существующих условий</li>
-                                <li>Определение зонирования и норм землепользования</li>
-                                <li>Подтверждение реализуемости проекта и альтернатив</li>
-                                <li>Формирование технического задания</li>
-                            </ul>
-                            <p style="color:#8a8e98; font-size: 90%;">Срок: обычно 2 недели</p>
-                        </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                         <a href="javascript:void(0);" onclick="printDoc('../static/docs/contract-sample.pdf')" class="print-icon-btn" style="display: inline-block; margin-top: 15px; margin-left: 12px; vertical-align: middle;">
                             <img src="../static/img/print-icon.png" alt="Печать договора" style="width: 34px; height: 34px; border-radius: 50%; opacity: 0.85;">
                             <span class="print-tooltip">Печать договора</span>
@@ -324,35 +222,66 @@
                     </div>
                     </div>
 
-                    <!-- 6. Концептуальный дизайн (переведено с референсного сайта Delik) -->
+                    <!-- 03. Проектирование геометрии стен -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Концептуальный дизайн</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Концептуальный дизайн" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;"><strong style="color:#E5BAA2;">Разработка концепции.</strong> На этом этапе мы начинаем превращать информацию в архитектурное решение — тестируем варианты и формируем общее представление о внешнем виде и ощущении пространства.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">03. Проектирование геометрии стен</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Проектирование геометрии стен" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Формируем архитектурно точную и прочную основу пространства, подготавливая объект к последующим этапам.</p>
+                        <div class="service-more" id="svc-more-3" style="display: none; color: #cacaca;">
+                            <p>Мы заходим на объект и аккуратно выполняем полный или частичный демонтаж старых конструкций при необходимости. Затем возводим новые, крепкие, аккуратные и ровные перегородки. В качестве материалов используем полнотелые пазогребневые плиты или гипсокартон, включая звукоизоляционный Кнауф-Сапфир, со строгим соблюдением всех регламентов и технологий монтажа Knauf. Стены строятся строго по геометрическим осям.</p>
+                        </div>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-3', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                    </div>
+                    </div>
+
+                    <!-- 04. Безупречное выравнивание поверхностей -->
+                    <div class="cell medium-6" style="margin-bottom: 30px;">
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">04. Безупречное выравнивание поверхностей</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Безупречное выравнивание поверхностей" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Создаем идеальные плоскости и углы во всей квартире. Это полностью исключает перекосы при стыковке будущих материалов.</p>
+                        <div class="service-more" id="svc-more-4" style="display: none; color: #cacaca;">
+                            <p>Проводим точную лазерную разметку стен и высот полов для выставления штукатурных маяков. Выполняем высокоточную штукатурку стен и устройство черновой или предчистовой стяжки полов. За счет строгого соблюдения геометрии и углов 90° мы гарантируем, что швы напольных покрытий сойдутся без смещений, а встроенная мебель встанет идеально без зазоров. Оконные и дверные откосы выводим исключительно штукатуркой по маякам — никаких сэндвич-панелей.</p>
+                        </div>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                    </div>
+                    </div>
+
+                    <!-- 05. Скрытые инженерные системы -->
+                    <div class="cell medium-6" style="margin-bottom: 30px;">
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">05. Скрытые инженерные системы</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Скрытые инженерные системы" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Проектируем и монтируем современные технологические коммуникации повышенной надежности, скрытые от глаз.</p>
+                        <div class="service-more" id="svc-more-5" style="display: none; color: #cacaca;">
+                            <p>Выполняем штробление стен и полов для скрытого монтажа трасс отопления, водоснабжения на новых надежных комплектующих, кабелей электрики любой сложности и закладных для кондиционеров. На этом же этапе подготавливаем ниши под скрытые плинтусы и монтируем короба дверей скрытого монтажа. После укладки трасс аккуратно заделываем штробы, коммутируем распаечные коробки, организуем временное освещение и подключаем рабочие точки водопровода для соблюдения технологической чистоты.</p>
+                        </div>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                    </div>
+                    </div>
+
+                    <!-- 06. Предчистовая и чистовая отделка -->
+                    <div class="cell medium-6" style="margin-bottom: 30px;">
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">06. Предчистовая и чистовая отделка</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Предчистовая и чистовая отделка" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Этап, на котором реализуются сложные дизайнерские решения и перфекционизм в финишных материалах.</p>
                         <div class="service-more" id="svc-more-6" style="display: none; color: #cacaca;">
-                            <p><strong style="color:#E5BAA2;">Предварительные планировки.</strong> Планировки и форма проекта начинают обретать очертания. Этап включает презентацию идей клиенту с помощью референсов, набросков от руки и макетов, чтобы визуализировать размер, форму и взаимосвязь помещений. Мы дорабатываем идеи по обратной связи клиента до согласования единого направления.</p>
-                            <ul class="services-ul" style="margin-top: 10px;">
-                                <li>Наброски и макеты для проверки идей и связей между помещениями</li>
-                                <li>Предварительные планировки и внешняя концепция</li>
-                                <li>Обратная связь клиента и доработка</li>
-                            </ul>
-                            <p style="color:#8a8e98; font-size: 90%;">Срок: обычно 2–3 недели</p>
+                            <p>Производим базовое шпаклевание в два слоя. В зависимости от финиша наносим армирующий стеклохолст под декоративную штукатурку с предварительным финишным шпаклеванием, либо выполняем финишное шпаклевание с ошкуриванием под любые типы обоев и покраску. Параллельно ведем укладку плитки любой сложности. Выполняем высокоточный запил под 45° и используем стойкую эпоксидную затирку для формирования идеальных наружных 3D-стыков.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-6', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 7. Ведение строительных работ (переведено с референсного сайта Delik) -->
+                    <!-- 07. Финишные решения и сдача -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">Ведение строительных работ</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Ведение строительных работ" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Хотя основная часть архитектурной работы выполняется до начала строительства, наше постоянное присутствие на этапе стройки не менее важно — это одно из главных преимуществ, когда проектировщик выступает и подрядчиком.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">07. Финишные решения и сдача</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Финишные решения и сдача" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Финальные штрихи интерьера, комплексный контроль качества и передача полностью готовой резиденции.</p>
                         <div class="service-more" id="svc-more-7" style="display: none; color: #cacaca;">
-                            <p>Мы ежедневно посещаем объект, отвечаем на вопросы субподрядчиков и заранее решаем потенциальные проблемы, чтобы итоговая отделка соответствовала ожиданиям.</p>
-                            <p>Некоторые решения неизбежно приходится принимать или корректировать прямо на месте — наша вовлечённость и возможность напрямую работать с субподрядчиками критически важны для качественного результата и избежания дорогостоящих задержек.</p>
-                            <p>Во время визитов на объект мы фотофиксируем прогресс и составляем отчёты, подтверждаем соответствие материалов и качества работ. Мы ведём ежедневный документированный контроль, чтобы все работы были выполнены на нашем уровне.</p>
+                            <p>Выполняем бесшовную укладку напольных покрытий (керамогранит, кварцвинил, паркет, бамбук) с минимальными эстетичными переходами. Монтируем современные натяжные потолки любой сложности. Если проектом предусмотрены потолки из ГКЛ по технологиям Knauf, многоуровневые карнизы или настенные молдинги — мы интегрируем эти работы в строгой технологической последовательности. Завершаем проект финальной проверкой всех систем, глубоким строительным клинингом и сдачей люксового интерьера.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-7', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>

@@ -12629,3 +12629,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, { passive: true });
 });
+
+/* ==========================================================================
+   ЕДИНАЯ ПЛАВНАЯ ПРОКРУТКА ПО ЯКОРНЫМ ССЫЛКАМ (стрелочки, пункты меню)
+   Раньше при повторном клике на пункт меню, ведущий на якорь на ТОЙ ЖЕ
+   странице (например «Услуги», когда уже находишься на ней), браузер видел,
+   что хэш в адресе не меняется, и просто не скроллил — отсюда ощущение
+   «через раз». Перехватываем такие клики и скроллим вручную каждый раз,
+   независимо от текущего хэша, с одинаковым отступом от фикс. шапки.
+   ========================================================================== */
+document.addEventListener('click', function (e) {
+    if (e.defaultPrevented) { return; }
+    var link = e.target.closest('a[href*="#"]');
+    if (!link) { return; }
+
+    var href = link.getAttribute('href') || '';
+    var hashIndex = href.indexOf('#');
+    if (hashIndex === -1) { return; }
+    var hash = href.slice(hashIndex + 1);
+    if (!hash) { return; }
+
+    // Обрабатываем только переходы В ПРЕДЕЛАХ этой же страницы: путь до
+    // решётки (если он есть) должен указывать на текущий документ.
+    var pathPart = href.slice(0, hashIndex);
+    if (pathPart) {
+        var resolved = new URL(pathPart, window.location.href);
+        if (resolved.pathname.replace(/\/+$/, '') !== window.location.pathname.replace(/\/+$/, '')) {
+            return; // ссылка ведёт на другую страницу — пусть работает как обычно
+        }
+    }
+
+    var target = document.getElementById(hash);
+    if (!target) { return; }
+
+    e.preventDefault();
+    var headerOffset = 90;
+    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    if (history.pushState) { history.pushState(null, '', '#' + hash); }
+}, false);
