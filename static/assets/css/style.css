@@ -11286,29 +11286,29 @@ screen and (min-width:64em) {
 }
 
 .home-header .animation-container div:nth-of-type(1) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 1s;
-    animation: tracking-in-out-contract 4.5s ease 1s
+    -webkit-animation: tracking-in-out-contract 3.5s ease-in-out 1s;
+    animation: tracking-in-out-contract 3.5s ease-in-out 1s
 }
 
 .home-header .animation-container div:nth-of-type(2) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 4.5s;
-    animation: tracking-in-out-contract 4.5s ease 4.5s
+    -webkit-animation: tracking-in-out-contract 3.5s ease-in-out 4.5s;
+    animation: tracking-in-out-contract 3.5s ease-in-out 4.5s
 }
 
 .home-header .animation-container div:nth-of-type(3) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 9s;
-    animation: tracking-in-out-contract 4.5s ease 9s
+    -webkit-animation: tracking-in-out-contract 3.5s ease-in-out 8s;
+    animation: tracking-in-out-contract 3.5s ease-in-out 8s
 }
 
 .home-header .animation-container div:nth-of-type(4) {
-    -webkit-animation: tracking-in-out-contract 4.5s ease 13.5s;
-    animation: tracking-in-out-contract 4.5s ease 13.5s
+    -webkit-animation: tracking-in-out-contract 3.5s ease-in-out 11.5s;
+    animation: tracking-in-out-contract 3.5s ease-in-out 11.5s
 }
 
 .home-header .animation-container div:last-of-type {
     top: calc(50% - 100px);
-    -webkit-animation: fade-in 3.375s ease-in-out 18s forwards;
-    animation: fade-in 3.375s ease-in-out 18s forwards
+    -webkit-animation: fade-in 3s ease-in-out 15s forwards;
+    animation: fade-in 3s ease-in-out 15s forwards
 }
 
 .home-header .animation-container div:first-of-type {
