@@ -12420,69 +12420,139 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ==========================================================================
-   ПОЛНОЭКРАННЫЙ ПРОСМОТР ФОТО ГАЛЕРЕИ ПОРТФОЛИО (лайтбокс)
+   ПОЛНОЭКРАННЫЙ ПРОСМОТР ГАЛЕРЕИ ПОРТФОЛИО (лайтбокс)
    Работает независимо от слайдера project-slider (в т.ч. на мобильных,
-   где сам слайдер отключается через "unslick"). Клик/тап по фото открывает
-   его на весь экран с перелистыванием свайпом (влево/вправо), стрелками
-   и клавиатурой; закрытие — по кресту, Esc или тапу вне фото.
+   где сам слайдер отключается через "unslick"). Тап по фото/видео открывает
+   его на весь экран смартфона (через Fullscreen API, как у видео), с
+   перелистыванием свайпом между всеми слайдами по порядку — включая
+   видео-тур. На фото работает пинч-зум и двойной тап для увеличения,
+   не затрагивая масштаб самой страницы. Закрытие — по кресту, Esc или
+   тапу вне медиа.
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', function () {
     var slider = document.querySelector('.project-slider');
     if (!slider) { return; }
 
-    var photos = Array.prototype.slice.call(
-        slider.querySelectorAll('.slide-content:not(.video-slide) img')
-    );
-    if (!photos.length) { return; }
+    var slideEls = Array.prototype.slice.call(slider.querySelectorAll('.slide-content'));
+    if (!slideEls.length) { return; }
 
-    var urls = photos.map(function (img) {
-        return img.getAttribute('data-lazy') || img.getAttribute('src');
-    });
+    var items = slideEls.map(function (slideEl) {
+        if (slideEl.classList.contains('video-slide')) {
+            var video = slideEl.querySelector('video');
+            var source = video ? video.querySelector('source') : null;
+            return {
+                type: 'video',
+                src: source ? source.getAttribute('src') : '',
+                poster: video ? video.getAttribute('poster') : ''
+            };
+        }
+        var img = slideEl.querySelector('img');
+        return {
+            type: 'image',
+            src: img ? (img.getAttribute('data-lazy') || img.getAttribute('src')) : '',
+            el: img
+        };
+    }).filter(function (it) { return it.src; });
+
+    if (!items.length) { return; }
 
     // Разметка лайтбокса добавляется один раз в конец body
     var overlay = document.createElement('div');
     overlay.className = 'pg-lightbox';
     overlay.innerHTML =
         '<button type="button" class="pg-lightbox-close" aria-label="Закрыть">&times;</button>' +
-        '<button type="button" class="pg-lightbox-prev" aria-label="Предыдущее фото">&#8249;</button>' +
-        '<img class="pg-lightbox-img" src="" alt="">' +
-        '<button type="button" class="pg-lightbox-next" aria-label="Следующее фото">&#8250;</button>' +
+        '<button type="button" class="pg-lightbox-prev" aria-label="Предыдущее">&#8249;</button>' +
+        '<div class="pg-lightbox-stage"></div>' +
+        '<button type="button" class="pg-lightbox-next" aria-label="Следующее">&#8250;</button>' +
         '<div class="pg-lightbox-counter"></div>';
     document.body.appendChild(overlay);
 
-    var imgEl = overlay.querySelector('.pg-lightbox-img');
+    var stage = overlay.querySelector('.pg-lightbox-stage');
     var counterEl = overlay.querySelector('.pg-lightbox-counter');
     var currentIndex = 0;
 
+    // --- Пинч-зум и двойной тап (только для фото) ---
+    var zoomState = { scale: 1, x: 0, y: 0 };
+
+    function resetZoom() {
+        zoomState = { scale: 1, x: 0, y: 0 };
+        var mediaEl = stage.querySelector('img, video');
+        if (mediaEl) { mediaEl.style.transform = 'translate(0px, 0px) scale(1)'; }
+    }
+
+    function applyZoom() {
+        var mediaEl = stage.querySelector('img');
+        if (!mediaEl) { return; }
+        mediaEl.style.transform = 'translate(' + zoomState.x + 'px, ' + zoomState.y + 'px) scale(' + zoomState.scale + ')';
+    }
+
     function show(index) {
-        currentIndex = (index + urls.length) % urls.length;
-        imgEl.src = urls[currentIndex];
-        counterEl.textContent = (currentIndex + 1) + ' / ' + urls.length;
+        currentIndex = (index + items.length) % items.length;
+        var item = items[currentIndex];
+        stage.innerHTML = '';
+        resetZoom();
+        if (item.type === 'video') {
+            var v = document.createElement('video');
+            v.setAttribute('controls', '');
+            v.setAttribute('playsinline', '');
+            if (item.poster) { v.setAttribute('poster', item.poster); }
+            v.className = 'pg-lightbox-media';
+            var s = document.createElement('source');
+            s.src = item.src;
+            s.type = 'video/mp4';
+            v.appendChild(s);
+            stage.appendChild(v);
+        } else {
+            var imgTag = document.createElement('img');
+            imgTag.src = item.src;
+            imgTag.className = 'pg-lightbox-media';
+            imgTag.alt = '';
+            stage.appendChild(imgTag);
+        }
+        counterEl.textContent = (currentIndex + 1) + ' / ' + items.length;
+    }
+
+    function requestFS() {
+        var el = overlay;
+        try {
+            if (el.requestFullscreen) { el.requestFullscreen().catch(function () {}); }
+            else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+        } catch (e) {}
+    }
+
+    function exitFS() {
+        try {
+            if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen().catch(function () {}); }
+            else if (document.webkitFullscreenElement && document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+        } catch (e) {}
     }
 
     function open(index) {
         show(index);
         overlay.classList.add('pg-lightbox-open');
         document.body.style.overflow = 'hidden';
+        requestFS();
     }
 
     function close() {
         overlay.classList.remove('pg-lightbox-open');
         document.body.style.overflow = '';
+        exitFS();
     }
 
-    photos.forEach(function (img, i) {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function () { open(i); });
+    slideEls.forEach(function (slideEl, i) {
+        var mediaTrigger = slideEl.querySelector('img');
+        if (!mediaTrigger) { return; }
+        mediaTrigger.style.cursor = 'zoom-in';
+        mediaTrigger.addEventListener('click', function () { open(i); });
     });
 
     overlay.querySelector('.pg-lightbox-close').addEventListener('click', close);
     overlay.querySelector('.pg-lightbox-prev').addEventListener('click', function () { show(currentIndex - 1); });
     overlay.querySelector('.pg-lightbox-next').addEventListener('click', function () { show(currentIndex + 1); });
 
-    // Клик по тёмному фону (не по самому фото) тоже закрывает
     overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) { close(); }
+        if (e.target === overlay || e.target === stage) { close(); }
     });
 
     document.addEventListener('keydown', function (e) {
@@ -12492,17 +12562,68 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'ArrowRight') { show(currentIndex + 1); }
     });
 
-    // Перелистывание свайпом (тач-устройства)
+    document.addEventListener('fullscreenchange', function () {
+        if (!document.fullscreenElement && overlay.classList.contains('pg-lightbox-open')) {
+            close();
+        }
+    });
+
+    // --- Жесты: свайп для перелистывания, пинч и двойной тап для зума ---
     var touchStartX = 0, touchStartY = 0;
-    overlay.addEventListener('touchstart', function (e) {
-        touchStartX = e.changedTouches[0].clientX;
-        touchStartY = e.changedTouches[0].clientY;
+    var pinchStartDist = 0, pinchStartScale = 1;
+    var lastTapTime = 0;
+    var panStartX = 0, panStartY = 0, panOrigX = 0, panOrigY = 0;
+
+    function dist(touches) {
+        var dx = touches[0].clientX - touches[1].clientX;
+        var dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    stage.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 2) {
+            pinchStartDist = dist(e.touches);
+            pinchStartScale = zoomState.scale;
+        } else if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            panStartX = e.touches[0].clientX;
+            panStartY = e.touches[0].clientY;
+            panOrigX = zoomState.x;
+            panOrigY = zoomState.y;
+
+            var now = Date.now();
+            if (now - lastTapTime < 300) {
+                // Двойной тап — переключаем зум
+                if (zoomState.scale > 1) {
+                    resetZoom();
+                } else {
+                    zoomState.scale = 2.5;
+                }
+                applyZoom();
+            }
+            lastTapTime = now;
+        }
+    }, { passive: true });
+
+    stage.addEventListener('touchmove', function (e) {
+        if (e.touches.length === 2 && pinchStartDist > 0) {
+            var newDist = dist(e.touches);
+            var scale = pinchStartScale * (newDist / pinchStartDist);
+            zoomState.scale = Math.min(Math.max(scale, 1), 4);
+            applyZoom();
+        } else if (e.touches.length === 1 && zoomState.scale > 1) {
+            zoomState.x = panOrigX + (e.touches[0].clientX - panStartX);
+            zoomState.y = panOrigY + (e.touches[0].clientY - panStartY);
+            applyZoom();
+        }
     }, { passive: true });
 
     overlay.addEventListener('touchend', function (e) {
+        pinchStartDist = 0;
+        if (zoomState.scale > 1) { return; } // при увеличенном фото свайп не переключает слайд
         var dx = e.changedTouches[0].clientX - touchStartX;
         var dy = e.changedTouches[0].clientY - touchStartY;
-        // Игнорируем в основном вертикальные свайпы, чтобы не путать с обычным скроллом
         if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
             if (dx > 0) { show(currentIndex - 1); } else { show(currentIndex + 1); }
         }

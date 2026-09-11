@@ -11374,6 +11374,16 @@ screen and (min-width:64em) {
     transform: translateY(-50%)
 }
 
+@media screen and (max-width: 639px) {
+    /* Контент раздела «Контакты» подрос (добавился блок «География»),
+       и формула центрирования на весь экран стала тянуть его вверх —
+       из-за этого почта была видна уже на первом экране. Сдвигаем
+       точку центрирования немного ниже именно на мобильных. */
+    .contact .grid-container {
+        top: 60vh;
+    }
+}
+
 .contact .overlay {
     position: absolute;
     top: 0;
@@ -12059,6 +12069,15 @@ screen and (min-width:64em) {
     background-attachment: fixed;
     position: relative;
     text-align: center
+}
+
+@media screen and (max-width: 639px) {
+    /* На iOS Safari background-attachment:fixed часто рендерится через
+       низкокачественный composited-слой — картинка выглядит размытой.
+       На мобильных параллакс не критичен, отключаем fixed. */
+    .team-intro {
+        background-attachment: scroll;
+    }
 }
 
 .about-intro .overlay,
@@ -13357,6 +13376,7 @@ screen and (min-width:40em) {
 .menu-bar {
     padding-left: 12px !important;
     padding-right: 12px !important;
+    gap: 14px !important;
 }
 .menu-bar > div[style*="gap: 20px"] {
     gap: clamp(4px, 1.5vw, 20px) !important;
@@ -13389,7 +13409,7 @@ screen and (min-width:40em) {
 .pg-lightbox {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(11, 12, 14, 0.96);
+    background: #0b0c0e;
     z-index: 9999;
     display: none;
     align-items: center;
@@ -13398,12 +13418,26 @@ screen and (min-width:40em) {
 .pg-lightbox.pg-lightbox-open {
     display: flex;
 }
-.pg-lightbox-img {
+.pg-lightbox-stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    touch-action: none;
+}
+.pg-lightbox-media {
     max-width: 92vw;
     max-height: 90vh;
     object-fit: contain;
     -webkit-user-select: none;
     user-select: none;
+    transition: transform .05s linear;
+    touch-action: none;
+}
+video.pg-lightbox-media {
+    touch-action: auto;
 }
 .pg-lightbox-close,
 .pg-lightbox-prev,
