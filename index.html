@@ -95,13 +95,14 @@
     <!-- Всплывающее меню навигации (Шторка) - Оставляем как в оригинале -->
     <div class="menu vertical first-time-showing" id="main-menu" data-toggler=".open-menu">
         <ul class="dropdown menu" data-dropdown-menu="">
-            <li><a class='home' href="./index.html" title="Главная">Главн<span>ая</span></a></li>
-            <li><a class="philosophy" href="./philosophy/index.html" title="Философия">Философ<span>ия</span></a></li>
-            <li><a href="./philosophy/index.html#services" title="Услуги" class="services">Услуг<span>и</span></a></li>
-            <li class='clear'><a href="./categories/finishing/index.html" title="Наши работы" class="finishing">Портфол<span>ио</span></a></li>
-            <li class="clear"><a class='clear' href="./our-team/index.html" title="Наша команда">Команд<span>а</span></a></li>
-            <li><a href="./index.html#contact" title="Связаться" class="contact-us">Контакты</a></li>
-        </ul>
+    <li><a class="home" href="./index.html" title="Главная">Главная</a></li>
+    <li><a class="philosophy" href="./philosophy/index.html" title="Философия">Философия</a></li>
+    <li><a class="services" href="./philosophy/index.html#services" title="Услуги">Услуги</a></li>
+    <li class="clear"><a class="finishing" href="./categories/finishing/index.html" title="Наши работы">Портфолио</a></li>
+    <li class="clear"><a class="clear" href="./our-team/index.html" title="Наша команда">Команда</a></li>
+    <li><a class="contact-us" href="./index.html#contact" title="Связаться">Контакты</a></li>
+</ul>
+
         <div class="social-container">
             <ul>
                 <li class="social clear">
@@ -117,12 +118,10 @@
 <!-- Главный экран с чистым, современным HTML5 видео-фоном (Финальное решение тайминга) -->
 <section id="home" class="home-header step scrollify" data-magellan="" data-offset="-25" style="position: relative; width: 100%; height: 100vh; overflow: hidden; background-color: #0b0c0e;">
     
-    <!-- Настоящий, системный видеоплеер -->
-    <video autoplay muted loop playsinline preload="auto" poster="./static/img/main-bg.jpg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; cursor: pointer;">
-        <source src="./static/video/main-bg-vid.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-    </video>
-
+   <!-- Настоящий, системный видеоплеер -->
+<video autoplay muted loop playsinline preload="auto" poster="./static/img/main-bg.jpg" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; cursor: pointer;">
+    <source src="./static/video/main-bg-vid.mp4" type="video/mp4">
+</video>
     <!-- Затемняющий оверлей поверх видео -->
     <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(11, 12, 14, 0.65); z-index: 1;"></div>
 
