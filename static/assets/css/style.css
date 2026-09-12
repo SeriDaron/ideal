@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Raleway:100, 300,400,700');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @font-face {
     font-family: Clemente;
@@ -13488,4 +13489,36 @@ video.pg-lightbox-media {
         right: 14px;
         font-size: 30px;
     }
+}
+
+/* ==========================================================================
+   РАЗДЕЛ «УСЛУГИ» — расширенный контейнер на больших экранах (в стиле
+   референсного сайта Delik) и премиальный шрифт заголовков с поддержкой
+   кириллицы (Cormorant Garamond — контрастный, элегантный serif, похожий
+   по духу на шрифт заголовков Delik, которые сами используют латиницу
+   без кириллицы).
+   ========================================================================== */
+@media screen and (min-width: 1400px) {
+    #services-wide-container {
+        max-width: 1600px;
+    }
+}
+@media screen and (min-width: 1800px) {
+    #services-wide-container {
+        max-width: 1800px;
+    }
+}
+
+#services-wide-container h3 {
+    font-family: 'Great Vibes', cursive !important;
+}
+#services-wide-container h2 {
+    font-weight: 300 !important;
+    font-size: 42px !important;
+}
+#services-wide-container h3 {
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important;
+    font-size: 42px !important;
 }

@@ -26,7 +26,7 @@
     <!-- Open Graph data (Для красивого превью в Telegram, WhatsApp, VK) -->
     <meta property="og:title" content="Философия перфекционизма | IDEAL">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ideal-stroy.ru">
+    <meta property="og:url" content="https://idealhq.ru">
     <meta property="og:image" content="../static/img/fb.jpg">
     <meta property="og:description" content="Бескомпромиссное стремление к совершенству in каждой детали. Узнайте больше о философии и ценностях бренда IDEAL в сфере high-end отделки недвижимости.">
     <meta property="og:site_name" content="IDEAL">
@@ -170,7 +170,7 @@
     <!-- картинку философии, когда доходит до неё при скролле.        -->
     <!-- ============================================================ -->
     <section style="background-color: #151822; padding-top: 40px; padding-bottom: 120px; position: relative; z-index: 5;">
-        <div class="grid-container">
+        <div class="grid-container" id="services-wide-container">
 
             <a id="services" style="display: block; scroll-margin-top: 100px;"></a>
 
@@ -188,29 +188,16 @@
                 <div class="cell medium-12 large-12">
                     <div class="grid-x grid-margin-x">
 
-                    <!-- 01. Приёмка объекта и аудит -->
+                    <!-- 01. Приемка и аудит проекта -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">01. Приёмка объекта и аудит</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Приёмка объекта и аудит" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Инспектируем пространство на этапе передачи от застройщика, чтобы зафиксировать реальное состояние объекта и защитить ваши интересы.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">01. Приемка и аудит проекта</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Приемка и аудит проекта" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Тщательно проверяем объект перед стартом работ, детально изучаем документацию и фиксируем итоговую стоимость.</p>
                         <div class="service-more" id="svc-more-1" style="display: none; color: #cacaca;">
-                            <p>Мы проводим приемку объекта с использованием профессиональных тепловизоров и высокоточных лазерных уровней для составления детальной дефектной ведомости — это фиксирует реальное состояние квартиры и защищает вас при спорах с застройщиком.</p>
+                            <p>Мы проводим профессиональную приемку квартиры от застройщика с составлением подробной дефектной ведомости, используя лазерные уровни высокой точности и тепловизоры. Если у вас уже есть готовый дизайн-проект, мы проводим его глубокий инженерный аудит на предмет скрытых ошибок и нестыковок. Если проекта нет — мы разрабатываем индивидуальное техническое решение со спецификациями. На основе этих данных формируется прозрачная фиксированная смета на работы и материалы, подписывается официальный договор и согласуется перепланировка.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-1', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
-                    </div>
-                    </div>
-
-                    <!-- 02. Проект, смета и договор -->
-                    <div class="cell medium-6" style="margin-bottom: 30px;">
-                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">02. Проект, смета и договор</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Проект, смета и договор" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Готовим прозрачную юридическую и финансовую базу, прежде чем приступать к самому ремонту.</p>
-                        <div class="service-more" id="svc-more-2" style="display: none; color: #cacaca;">
-                            <p>Детально изучаем ваш готовый дизайн-проект или разрабатываем собственный с нуля с полной спецификацией. На основе этого формируется фиксированная смета на работы и материалы, готовится официальный договор со строгими гарантиями и согласовывается перепланировка в контролирующих органах.</p>
-                        </div>
-                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-2', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                         <a href="javascript:void(0);" onclick="printDoc('../static/docs/smeta-sample.pdf')" class="print-icon-btn" style="display: inline-block; margin-top: 15px; margin-left: 12px; vertical-align: middle;">
                             <img src="../static/img/print-icon.png" alt="Печать примера сметы" style="width: 34px; height: 34px; border-radius: 50%; opacity: 0.85;">
                             <span class="print-tooltip">Печать примера сметы</span>
@@ -222,66 +209,79 @@
                     </div>
                     </div>
 
-                    <!-- 03. Проектирование геометрии стен -->
+                    <!-- 02. Демонтаж и возведение стен -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">03. Проектирование геометрии стен</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Проектирование геометрии стен" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Формируем архитектурно точную и прочную основу пространства, подготавливая объект к последующим этапам.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">02. Демонтаж и возведение стен</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Демонтаж и возведение стен" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Готовим пространство к капитальным изменениям и возводим новые стены с идеальной геометрией по осям.</p>
+                        <div class="service-more" id="svc-more-2" style="display: none; color: #cacaca;">
+                            <p>Мы аккуратно выполняем полный или частичный демонтаж существующих конструкций и вывозим строительный мусор. Затем возводим новые, крепкие и аккуратные перегородки строго по геометрическим осям квартиры, закладывая правильную основу для всего последующего ремонта. В качестве материалов используем полнотелые пазогребневые плиты или гипсокартон, включая высокопрочный звукоизоляционный Кнауф-Сапфир. Стены строятся со строгим соблюдением всех строительных регламентов и оригинальных технологий Knauf.</p>
+                        </div>
+                        <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-2', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
+                    </div>
+                    </div>
+
+                    <!-- 03. Выравнивание поверхностей -->
+                    <div class="cell medium-6" style="margin-bottom: 30px;">
+                    <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">03. Выравнивание поверхностей</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Выравнивание поверхностей" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Создаем безупречные плоскости и углы во всей квартире. Это полностью исключает зазоры при монтаже мебели и дверей.</p>
                         <div class="service-more" id="svc-more-3" style="display: none; color: #cacaca;">
-                            <p>Мы заходим на объект и аккуратно выполняем полный или частичный демонтаж старых конструкций при необходимости. Затем возводим новые, крепкие, аккуратные и ровные перегородки. В качестве материалов используем полнотелые пазогребневые плиты или гипсокартон, включая звукоизоляционный Кнауф-Сапфир, со строгим соблюдением всех регламентов и технологий монтажа Knauf. Стены строятся строго по геометрическим осям.</p>
+                            <p>Мы проводим точную лазерную разметку стен и высот полов для выставления штукатурных маяков. Выполняем высокоточную штукатурку стен и устройство ровной черновой или предчистовой стяжки полов. За счет строгого выведения углов 90° мы гарантируем, что встроенная мебель встанет без щелей, а швы финишных напольных покрытий сойдутся идеально параллельно стенам без перекосов. Все оконные и дверные откосы мы выводим исключительно штукатуркой по маякам — никакого дешевого гипсокартона или сэндвич-панелей в этих зонах.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-3', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 04. Безупречное выравнивание поверхностей -->
+                    <!-- 04. Скрытые коммуникации -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">04. Безупречное выравнивание поверхностей</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Безупречное выравнивание поверхностей" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Создаем идеальные плоскости и углы во всей квартире. Это полностью исключает перекосы при стыковке будущих материалов.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">04. Скрытые коммуникации</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Скрытые коммуникации" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Проектируем и монтируем современные технологические системы жизнеобеспечения дома с повышенным запасом надежности.</p>
                         <div class="service-more" id="svc-more-4" style="display: none; color: #cacaca;">
-                            <p>Проводим точную лазерную разметку стен и высот полов для выставления штукатурных маяков. Выполняем высокоточную штукатурку стен и устройство черновой или предчистовой стяжки полов. За счет строгого соблюдения геометрии и углов 90° мы гарантируем, что швы напольных покрытий сойдутся без смещений, а встроенная мебель встанет идеально без зазоров. Оконные и дверные откосы выводим исключительно штукатуркой по маякам — никаких сэндвич-панелей.</p>
+                            <p>Выполняем штробление стен и полов для скрытого монтажа трасс отопления, водоснабжения, закладных для кондиционеров и кабелей электрики (включая автоматизацию любой сложности). На этом же этапе мы подготавливаем ниши под скрытые плинтусы и монтируем жесткие короба дверей скрытого монтажа. После укладки всех трасс аккуратно заделываем штробы, коммутируем распаечные коробки, организуем временное освещение и подключаем рабочие точки водопровода на новых надежных чешских комплектующих, сохраняя полную технологическую чистоту на объекте.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-4', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 05. Скрытые инженерные системы -->
+                    <!-- 05. Малярные и плиточные работы -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">05. Скрытые инженерные системы</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Скрытые инженерные системы" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Проектируем и монтируем современные технологические коммуникации повышенной надежности, скрытые от глаз.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">05. Малярные и плиточные работы</h3>
+                        <img src="../static/portfolio/photo.jpg" alt="Малярные и плиточные работы" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Создаем финишные покрытия стен под направленный свет и укладываем плитку со сложными 3D-стыками.</p>
                         <div class="service-more" id="svc-more-5" style="display: none; color: #cacaca;">
-                            <p>Выполняем штробление стен и полов для скрытого монтажа трасс отопления, водоснабжения на новых надежных комплектующих, кабелей электрики любой сложности и закладных для кондиционеров. На этом же этапе подготавливаем ниши под скрытые плинтусы и монтируем короба дверей скрытого монтажа. После укладки трасс аккуратно заделываем штробы, коммутируем распаечные коробки, организуем временное освещение и подключаем рабочие точки водопровода для соблюдения технологической чистоты.</p>
+                            <p>Производим базовое шпаклевание в два слоя, наносим армирующий стеклохолст, выполняем финишное шпаклевание и деликатное ошкуривание поверхностей. Это подготавливает стены под безупречную покраску, любые типы обоев или нанесение декоративной штукатурки. Параллельно ведем укладку плитки и керамогранита любой сложности. Мы выполняем высокоточный запил наружных углов под 45° и используем стойкую двухкомпонентную эпоксидную затирку для формирования идеальных и долговечных 3D-стыков.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-5', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 06. Предчистовая и чистовая отделка -->
+                    <!-- 06. Финишные покрытия и декор -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">06. Предчистовая и чистовая отделка</h3>
-                        <img src="../static/portfolio/photo.jpg" alt="Предчистовая и чистовая отделка" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Этап, на котором реализуются сложные дизайнерские решения и перфекционизм в финишных материалах.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">06. Финишные покрытия и декор</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Финишные покрытия и декор" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Производим укладку всех типов чистовых полов и сложный монтаж потолочных систем.</p>
                         <div class="service-more" id="svc-more-6" style="display: none; color: #cacaca;">
-                            <p>Производим базовое шпаклевание в два слоя. В зависимости от финиша наносим армирующий стеклохолст под декоративную штукатурку с предварительным финишным шпаклеванием, либо выполняем финишное шпаклевание с ошкуриванием под любые типы обоев и покраску. Параллельно ведем укладку плитки любой сложности. Выполняем высокоточный запил под 45° и используем стойкую эпоксидную затирку для формирования идеальных наружных 3D-стыков.</p>
+                            <p>Мы выполняем бесшовную укладку напольных покрытий (керамогранит, кварцвинил, паркет, бамбук) с использованием минимальных, эстетичных закладных порожков без перепадов по высоте. Монтируем современные натяжные потолки любой сложности или собираем многоуровневые жесткие конструкции из ГКЛ по технологиям Knauf. На этом же этапе аккуратно устанавливаем массивные потолочные плинтусы, настенные молдинги и декоративные архитектурные элементы в строгой технологической последовательности.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-6', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
                     </div>
 
-                    <!-- 07. Финишные решения и сдача -->
+                    <!-- 07. Контроль качества и финал -->
                     <div class="cell medium-6" style="margin-bottom: 30px;">
                     <div class="service-block" style="border: 1px solid rgba(229, 186, 162, 0.2); background: rgba(255,255,255,0.02); padding: 45px; height: 100%;">
-                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">07. Финишные решения и сдача</h3>
-                        <img src="../static/portfolio/photo_pr1.jpg" alt="Финишные решения и сдача" style="width: 100%; height: auto; display: block; margin: 20px 0;">
-                        <p style="color: #a0a5b0; line-height: 1.7;">Финальные штрихи интерьера, комплексный контроль качества и передача полностью готовой резиденции.</p>
+                        <h3 style="color: #ffffff; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; font-size: 26px; margin-bottom: 15px;">07. Контроль качества и финал</h3>
+                        <img src="../static/portfolio/photo_pr1.jpg" alt="Контроль качества и финал" style="width: 100%; height: auto; display: block; margin: 20px 0;">
+                        <p style="color: #a0a5b0; line-height: 1.7;">Проводим глубокое тестирование инженерных систем, генеральный клининг и сдаем объект в эксплуатацию.</p>
                         <div class="service-more" id="svc-more-7" style="display: none; color: #cacaca;">
-                            <p>Выполняем бесшовную укладку напольных покрытий (керамогранит, кварцвинил, паркет, бамбук) с минимальными эстетичными переходами. Монтируем современные натяжные потолки любой сложности. Если проектом предусмотрены потолки из ГКЛ по технологиям Knauf, многоуровневые карнизы или настенные молдинги — мы интегрируем эти работы в строгой технологической последовательности. Завершаем проект финальной проверкой всех систем, глубоким строительным клинингом и сдачей люксового интерьера.</p>
+                            <p>Мы осуществляем финальный деликатный монтаж чистового оборудования: дизайнерского света, сантехники, премиальных электроустановочных изделий и элементов автоматизации умного дома. После этого проводится комплексная проверка работоспособности всех скрытых узлов и трасс под нагрузкой. Завершающим этапом является глубокий профессиональный строительный клининг, удаление малейших следов пыли и официальная передача вам полностью готовой для жизни резиденции.</p>
                         </div>
                         <button type="button" class="read-more-btn" onclick="toggleServiceText('svc-more-7', this)" style="margin-top: 15px; background: transparent; border: none; border-bottom: 1px solid rgba(229, 186, 162, 0.5); color: #E5BAA2; padding: 6px 0; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; cursor: pointer;">Читать далее ⌄</button>
                     </div>
@@ -295,7 +295,7 @@
 
 </body>
 <!-- ИСПРАВЛЕНО: Исправлены обратные слэши Windows на стандартные веб-слэши -->
-<script src="../static/assets/js/main.js"></script>
+<script src="../static/assets/js/main.js?v=2"></script>
 <script>
     // Кнопка «Читать далее» на карточках услуг: показывает/скрывает
     // оставшуюся часть текста без использования Foundation-аккордеона.
@@ -324,11 +324,19 @@
     // Если на страницу переходят сразу с якорем в адресе (например, по ссылке
     // «Услуги» из меню на другой странице), делаем тот же корректный отступ
     // после того, как вёрстка полностью устоится.
-    window.addEventListener('load', function () {
+    function scrollToHashOnEntry() {
         if (window.location.hash) {
             var id = window.location.hash.substring(1);
             setTimeout(function () { scrollToWithOffset(id, null); }, 350);
         }
+    }
+    window.addEventListener('load', scrollToHashOnEntry);
+    // «pageshow» дополнительно срабатывает и при восстановлении страницы из
+    // bfcache (кнопки «вперёд/назад» в браузере) — в этом случае обычный
+    // «load» не срабатывает вовсе, и без этого переход из меню «через раз»
+    // не долистывал до нужного места.
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) { scrollToHashOnEntry(); }
     });
     // Печать документов (смета/договор): открывает PDF и сразу вызывает
     // системный диалог печати браузера — как раньше при Ctrl+P, а не

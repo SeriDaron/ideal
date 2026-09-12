@@ -12664,7 +12664,13 @@ document.addEventListener('click', function (e) {
 
     e.preventDefault();
     var headerOffset = 90;
-    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    // Меню закрывается с анимацией ~0.3с — если считать позицию для скролла
+    // мгновенно, пока меню ещё визуально открыто/закрывается, расчёт иногда
+    // получается по «промежуточной» раскладке страницы. Ждём, пока анимация
+    // закрытия точно завершится, и только потом меряем и скроллим.
+    setTimeout(function () {
+        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }, 350);
     if (history.pushState) { history.pushState(null, '', '#' + hash); }
 }, false);
